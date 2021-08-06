@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Hero from "./Hero";
-import ProjectsSection from "./ProjectsSection";
+import Hero from "components/organisms/Hero";
+import ProjectsSection from "components/organisms/ProjectsSection";
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
