@@ -4,8 +4,10 @@ import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProjectsSectionTemplate from "templates/ProjectsSectionTemplate";
+import TransitionScreen from "components/atoms/TransitionScreen";
 import Hero from "components/organisms/Hero";
-import ProjectsSection from "components/organisms/ProjectsSection";
+
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,12 +16,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Card = styled.div`
-  width: 80%;
-  height: 700px;
-  background-color: #555;
 `;
 
 const Home = ({ setActiveNavLink }) => {
@@ -37,20 +33,19 @@ const Home = ({ setActiveNavLink }) => {
   useEffect(() => {
     //if there is need to scroll to section
     if (window.location.hash !== "") {
-      const domRect = document.querySelector(window.location.hash).offsetTop;
-      const summary = domRect;
+      const topOfElement = document.querySelector(window.location.hash).offsetTop;
 
       //run on first entrance on the page
       if (history.action === "POP") {
-        gsap.set(window, { scrollTo: summary });
+        gsap.set(window, { scrollTo: topOfElement });
       } else if (history.action === "PUSH") {
         //animate scroll between sections on the same route
         if (scrollFromThisPage) {
-          gsap.to(window, { duration: 0.7, scrollTo: summary });
+          gsap.to(window, { duration: 0.7, scrollTo: topOfElement });
           return;
         }
         //delay scroll animation when changing between two routes
-        gsap.to(window, { delay: 3, duration: 0.7, scrollTo: summary });
+        // gsap.to(window, { delay: 2.3, scrollTo: topOfElement });
       }
     }
     //next scroll animations with no delay
@@ -78,13 +73,10 @@ const Home = ({ setActiveNavLink }) => {
 
   return (
     <div>
+      <TransitionScreen fromLeft />
       <Wrapper ref={WrapperEl}>
         <Hero ref={section1Ref} />
-        <ProjectsSection ref={section2Ref} />
-
-        <Card id="contact" ref={section3Ref}>
-          Contact
-        </Card>
+        <ProjectsSectionTemplate ref={section2Ref} />
       </Wrapper>
     </div>
   );

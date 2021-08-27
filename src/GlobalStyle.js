@@ -7,14 +7,38 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Segoe UI', sans-serif;
+        /* font-family: 'Segoe UI', sans-serif; */
+        font-family: 'Montserrat', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
+    /* ::-webkit-scrollbar {
+        width: 5px;
+
+    }
+
+    ::-webkit-scrollbar-track {
+        background: white; 
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #454359; 
+        background: transparent; 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #56546a; 
+    } */
+
+    :root {
+    font-size: 62.5%;
+    }
+
     body {
-        background-color: #f3f3f3;
+        /* background-color: #f3f3f3; */
         overflow-x: hidden;
+        color: white;
     }
 
     a {
@@ -24,34 +48,32 @@ const GlobalStyle = createGlobalStyle`
 
     .page {
         position: absolute;
-        top: 50px;
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        /* background-color: pink; */
-        
     }
     .main {
         position: absolute;
-        top: 50px;
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: white;
     }
 
     /* 
     */
 
     .page-enter {
+        
         position: fixed;
         transform: translateX(100%);
-        z-index: 999;
+        z-index: 998;
     }
     .page-enter-active {
         position: fixed;
         transform: translateX(0%);
-        transition: transform 700ms 1200ms;
+        transition: transform 700ms 200ms ;
     }
     .page-enter-done {
     }
@@ -64,22 +86,19 @@ const GlobalStyle = createGlobalStyle`
     */
 
     .main-enter {
-        position: absolute;
+        position: fixed;
         transform: translateX(-100%);
-        z-index: 999;
+        z-index: 998;
     }
     .main-enter-active {
-        position: absolute;
+        position: fixed;
         transform: translateX(0);
-        transition: transform 700ms 1200ms;
+        transition: transform 700ms 200ms ;
     }
     .main-exit {
     }
     .main-exit-active {
     }
-
-    /* clip-path: polygon(33% 0, 100% 10%, 100% 90%, 67% 100%, 0 90%, 0 10%); */
-
 `;
 
 export default GlobalStyle;

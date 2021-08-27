@@ -4,13 +4,14 @@ import { CSSTransition } from "react-transition-group";
 import GlobalStyle from "GlobalStyle";
 import Navigation from "components/organisms/Navigation";
 import Home from "pages/Home";
-import About from "pages/About";
-import Users from "pages/Users";
+import ProjectErsi from "pages/ProjectErsi";
+import ProjectCodeFast from "pages/ProjectCodeFast";
+import routes from "routes";
 
 const components = [
   { path: "/", Component: Home, transitionClasses: "main" },
-  { path: "/about", Component: About, transitionClasses: "page" },
-  { path: "/users", Component: Users, transitionClasses: "page" },
+  { path: routes.ersi, Component: ProjectErsi, transitionClasses: "page" },
+  { path: routes.codefast, Component: ProjectCodeFast, transitionClasses: "page" },
 ];
 
 function App() {
@@ -23,7 +24,15 @@ function App() {
       {components.map(({ path, Component, transitionClasses }) => (
         <Route key={path} exact path={path}>
           {({ match }) => (
-            <CSSTransition in={match != null} timeout={2500} classNames={transitionClasses} unmountOnExit>
+            <CSSTransition
+              in={match != null}
+              timeout={{
+                enter: 1800,
+                exit: 1500,
+              }}
+              classNames={transitionClasses}
+              unmountOnExit
+            >
               <div className={transitionClasses}>
                 <Component setActiveNavLink={setActiveNavLink} />
               </div>

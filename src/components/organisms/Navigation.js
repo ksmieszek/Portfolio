@@ -11,10 +11,25 @@ const StyledNavWrapper = styled.nav`
   left: 0;
   right: 0;
   width: 100%;
-  height: 50px;
+  height: 70px;
   background-color: transparent;
-  /* background-color: yellow; */
-  z-index: 9999;
+  z-index: 998;
+  pointer-events: none;
+
+  @media (min-width: 1440px) {
+    pointer-events: all;
+    /* background-color: #34333b; */
+  }
+`;
+
+const StyledBoxShadowWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
 `;
 
 const StyledLinksWrapper = styled.div`
@@ -28,43 +43,42 @@ const StyledLinksWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f3f3f3;
+  background-color: #1b1f2d;
+  pointer-events: all;
+  font-size: 2rem;
 
   @media (min-width: 1440px) {
     position: static;
     height: 100%;
-    padding: 0 200px;
+    max-width: 1440px;
     transform: translateY(0);
+    margin: auto;
+    /* padding: 0 200px; */
     flex-direction: row;
     justify-content: flex-end;
+    font-size: 1.6rem;
+    background-color: transparent;
   }
 `;
 
 const StyledNavLink = styled(NavLink)`
   position: relative;
-  margin-bottom: 20px;
-  padding: 10px;
+  width: 100%;
+  padding: 30px;
   display: block;
+  text-align: center;
+  font-weight: 500;
   opacity: 0;
-  color: gray;
-  font-weight: bold;
+  color: #b0b2c3;
 
   @media (min-width: 1440px) {
-    margin: 0 20px;
+    width: auto;
+    padding: 10px 30px;
     opacity: 1;
   }
 
   &.active {
-    color: black;
-    /* ::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 10px;
-      width: 30px;
-      height: 2px;
-      background-color: gray;
-    } */
+    color: white;
   }
 `;
 
@@ -76,6 +90,8 @@ const StyledHamburgerWrapper = styled.div`
   height: 35px;
   transform: translateY(-50%);
   background-color: transparent;
+  z-index: 999;
+  pointer-events: all;
 
   @media (min-width: 1440px) {
     display: none;
@@ -89,7 +105,7 @@ const StyledLine = styled.span`
   width: 20px;
   height: 2px;
   display: block;
-  background-color: black;
+  background-color: white;
 
   ${(props) =>
     props.first &&
@@ -107,37 +123,47 @@ const StyledLine = styled.span`
 
 const Navigation = ({ activeNavLink }) => {
   const navLinks = [
-    { name: "home", title: "Start" },
-    { name: "projects", title: "Projects" },
-    { name: "contact", title: "Contact" },
+    { name: "home", title: "Home" },
+    { name: "projects", title: "Projekty" },
+    { name: "contact", title: "Kontakt" },
   ];
 
   const [menuVisible, setMenuVisible] = useState(false);
   const navRef = useRef(null);
   const navLinksRef = useRef(null);
   const hamburgerRef = useRef(null);
+  const boxShadowRef = useRef(null);
 
   //animate nav on scroll
   useEffect(() => {
-    const animation1 = gsap.to(navLinksRef.current, { boxShadow: "rgba(0, 0, 0, 0.1) 0px 3px 8px", duration: 0.2, paused: true });
-    const animation2 = gsap.to(hamburgerRef.current, { background: "black", duration: 0.2, paused: true });
+    const animation1 = gsap.to(navRef.current, { backgroundColor: "#1c1d25", duration: 0.4, paused: true });
+    const animation2 = gsap.to(boxShadowRef.current, { autoAlpha: 1, duration: 0.4, paused: true });
+    const animation3 = gsap.to(hamburgerRef.current, { background: "black", duration: 0.2, paused: true });
     const HamburgerFisrtLineAnimation = gsap.to(hamburgerRef.current.children[0], { background: "white", duration: 0.2, paused: true });
     const HamburgerSecondLineAnimation = gsap.to(hamburgerRef.current.children[1], { background: "white", duration: 0.2, paused: true });
 
     ScrollTrigger.create({
       trigger: navRef.current,
       start: "bottom top",
-      end: ScrollTrigger.maxScroll(window) + "top",
+      end: 9999 + "top",
+      // end: () => {
+      //   return ScrollTrigger.maxScroll(window) + 300;
+      // },
       // markers: true,
       onToggle: (self) => {
         if (self.isActive) {
-          animation1.play();
-          animation2.play();
-          HamburgerFisrtLineAnimation.play();
-          HamburgerSecondLineAnimation.play();
+          if (window.innerWidth >= 1440) {
+            animation1.play();
+            animation2.play();
+          } else {
+            animation3.play();
+            HamburgerFisrtLineAnimation.play();
+            HamburgerSecondLineAnimation.play();
+          }
         } else {
           animation1.reverse();
           animation2.reverse();
+          animation3.reverse();
           HamburgerFisrtLineAnimation.reverse();
           HamburgerSecondLineAnimation.reverse();
         }
@@ -204,6 +230,7 @@ const Navigation = ({ activeNavLink }) => {
 
   return (
     <StyledNavWrapper ref={navRef}>
+      <StyledBoxShadowWrapper ref={boxShadowRef} />
       <StyledLinksWrapper ref={navLinksRef}>
         {navLinks.map((item) => (
           <StyledNavLink isActive={() => activeNavLink === item.name} to={`/#${item.name}`} key={item.name} onClick={() => handleMenu()}>
