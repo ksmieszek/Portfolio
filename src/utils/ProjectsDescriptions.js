@@ -7,7 +7,7 @@ export const projectErsiDescription = {
   id: "ersi",
   title: "Pixel perfect",
   description:
-    "Budując ten projekt starałem się najwierniej odwzorować wygląd oraz interakcje tej strony. Najbardziej wymagającym zadaniem było odtworzenie rozbudowanej nawigacji.",
+    "Budując ten projekt starałem się najwierniej odwzorować wygląd oraz interakcje na tej stronie. Najbardziej wymagającym zadaniem było odtworzenie rozbudowanej nawigacji.",
   technologies: [Icons.css, Icons.javascript, Icons.html],
   image: Images.ersi,
   githubLink: `https://github.com/`,
@@ -32,7 +32,7 @@ export const projectCodeFastDescription = {
   githubLink: `https://github.com/`,
   siteLink: `https://github.com/`,
   path: routes.codefast,
-  detailedDescription: `Wchodząc na stronę można wybrać jeden lub wiele języków programowania oraz czas trwanie treningu. Ćwiczenie rozpoczyna się gdy zaczniemy
+  detailedDescription: `Wchodząc na stronę można wybrać jeden lub wiele języków programowania oraz czas trwania treningu. Ćwiczenie rozpoczyna się gdy zaczniemy
           pisać w polu tekstowym. Po zakończeniu sesji pisania kodu zostają wyświetlone jej wyniki. Można też śledzić swój postęp wchodząc do panelu
           gdzie jest zapisana cała nasza historia kodowania.`,
   features: [

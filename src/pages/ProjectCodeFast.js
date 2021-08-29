@@ -5,6 +5,8 @@ import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
 import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
 import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
 import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
+import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
+import routes from "routes";
 
 const ProjectCodeFast = () => {
   return (
@@ -12,6 +14,7 @@ const ProjectCodeFast = () => {
       <ProjectHeaderTemplate project={projectCodeFastDescription} />
       <ProjectFeaturesTemplate features={projectCodeFastDescription.features} />
       <ProjectInteractionsTemplate videos={projectCodeFastDescription.videos} />
+      <ProjectNextLinkTemplate link={routes.ersi} />
     </ProjectContentTepmlate>
   );
 };

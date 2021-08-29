@@ -7,6 +7,8 @@ import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
 import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
 import SectionTitle from "components/atoms/SectionTitle";
 import ersiViewsImage from "assets/ersiProject/ersi-views.png";
+import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
+import routes from "routes";
 
 const StyledViewsWrapper = styled.div`
   margin-top: 70px;
@@ -40,6 +42,7 @@ const ProjectErsi = () => {
         <StyledViews src={ersiViewsImage} alt="" />
       </StyledViewsWrapper>
       <ProjectInteractionsTemplate videos={projectErsiDescription.videos} />
+      <ProjectNextLinkTemplate link={routes.codefast} />
     </ProjectContentTepmlate>
   );
 };

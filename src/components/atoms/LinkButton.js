@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
+import ArrowSign from "./ArrowSign";
 
 const StyledWrapper = styled(Link)`
   position: relative;
@@ -58,23 +59,6 @@ const StyledWrapper = styled(Link)`
     `}
 `;
 
-const StyledArrow = styled.span`
-  width: 15px;
-  height: 15px;
-  margin-left: 10px;
-  border-top: 2px solid rgb(247, 224, 24);
-  border-left: 2px solid rgb(247, 224, 24);
-  transform: rotate(135deg);
-
-  ${(props) =>
-    props.small &&
-    css`
-      width: 7px;
-      height: 7px;
-      border-color: #b0b2c3;
-    `}
-`;
-
 const StyledText = styled.span`
   ${(props) =>
     props.back &&
@@ -87,7 +71,7 @@ const LinkButton = ({ link, back, small, children, ...args }) => {
   return (
     <StyledWrapper to={link} back={back ? 1 : 0} small={small ? 1 : 0} {...args}>
       <StyledText back={back}>{children}</StyledText>
-      <StyledArrow small={small} />
+      <ArrowSign small={small} />
     </StyledWrapper>
   );
 };
