@@ -8,6 +8,10 @@ import jschartingIcon from "assets/icons/jscharting.svg";
 import javascriptIcon from "assets/icons/javascript.svg";
 import reacthookformIcon from "assets/icons/reacthookform.svg";
 import htmlIcon from "assets/icons/html.svg";
+import styledComponentsIcon from "assets/icons/styled-components.svg";
+import strapiIcon from "assets/icons/strapi.svg";
+import reactReduxIcon from "assets/icons/redux.svg";
+import mongoDBIcon from "assets/icons/mongoDB.svg";
 
 const Icons = {
   react: {
@@ -44,11 +48,27 @@ const Icons = {
   },
   reacthookform: {
     icon: reacthookformIcon,
-    name: "ReacthHookForm",
+    name: "React Hook Form",
   },
   html: {
     icon: htmlIcon,
     name: "HTML",
+  },
+  styledComponents: {
+    icon: styledComponentsIcon,
+    name: "Styled-components",
+  },
+  strapi: {
+    icon: strapiIcon,
+    name: "Strapi",
+  },
+  reactRedux: {
+    icon: reactReduxIcon,
+    name: "React Redux",
+  },
+  mongoDB: {
+    icon: mongoDBIcon,
+    name: "MongoDB Atlas",
   },
 };
 

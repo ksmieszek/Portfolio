@@ -6,12 +6,14 @@ import Navigation from "components/organisms/Navigation";
 import Home from "pages/Home";
 import ProjectErsi from "pages/ProjectErsi";
 import ProjectCodeFast from "pages/ProjectCodeFast";
+import ProjectMyDictionary from "pages/ProjectMyDictionary";
 import routes from "routes";
 
 const components = [
   { path: "/", Component: Home, transitionClasses: "main" },
   { path: routes.ersi, Component: ProjectErsi, transitionClasses: "page" },
   { path: routes.codefast, Component: ProjectCodeFast, transitionClasses: "page" },
+  { path: routes.mydictionary, Component: ProjectMyDictionary, transitionClasses: "page" },
 ];
 
 function App() {
