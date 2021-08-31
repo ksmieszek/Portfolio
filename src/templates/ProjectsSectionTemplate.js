@@ -29,8 +29,8 @@ const StyledProjectWrapper = styled.div`
   align-items: center;
 
   @media (min-width: 1440px) {
-    width: auto;
-    max-width: 1400px;
+    width: 1275px;
+    max-width: 1275px;
     padding: 120px 0 80px 0;
     flex-direction: row;
     align-items: flex-start;
@@ -38,6 +38,8 @@ const StyledProjectWrapper = styled.div`
 `;
 
 const StyledImageWrapper = styled.div`
+  width: 100%;
+  max-width: 800px;
   margin-bottom: 25px;
   /* filter: drop-shadow(1px 1px 0px rgba(253, 224, 24, 1)); */
   filter: drop-shadow(5px 5px 2px rgba(253, 224, 24, 1));
@@ -45,7 +47,6 @@ const StyledImageWrapper = styled.div`
 
 const StyledImage = styled.img`
   width: 100%;
-  max-width: 800px;
   height: 50vw;
   max-height: 450px;
   border-radius: 5px;
@@ -62,6 +63,7 @@ const StyledContent = styled.div`
   font-size: 1.6rem;
 
   @media (min-width: 1440px) {
+    width: 475px;
     padding-top: 25px;
     padding-right: 25px;
     display: flex;
@@ -146,6 +148,7 @@ const StyledTechnologyIconDescription = styled.div`
   font-size: 12px;
   background-color: #42414d;
   z-index: 2;
+  white-space: nowrap;
 
   ${StyledTechnologyIconWrapper}:hover & {
     display: block;
@@ -202,7 +205,7 @@ const ProjectsSection = React.forwardRef((props, ref) => {
             </StyledImageWrapper>
             <StyledLinksWrapper>
               <StyledExternalLinksWrapper>
-                <ExternalLinks github="https://github.com/" site="https://github.com/" />
+                <ExternalLinks github={item.githubLink} site={item.siteLink} />
               </StyledExternalLinksWrapper>
               <LinkButton link={item.path}>SZCZEGÓŁY</LinkButton>
             </StyledLinksWrapper>
