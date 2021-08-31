@@ -73,6 +73,27 @@ export const projectMyDictionaryDescription = {
   videos: Videos.mydictionary,
 };
 
-const projectsDescriptions = [projectMyDictionaryDescription, projectErsiDescription, projectCodeFastDescription];
+export const projectHotelWebDescription = {
+  id: "hotelweb",
+  title: "Hotel Web Application",
+  description:
+    "Wyświetlane na stronie treści są zarządzane przez CMS, możemy też składać rezerwacje które są zapisywane do naszego koszyka zakupowego.",
+  technologies: [Icons.materialize, Icons.bootstrap, Icons.dotnetcore],
+  image: Images.hotelweb,
+  githubLink: `https://github.com/`,
+  path: routes.hotelweb,
+  detailedDescription:
+    "Aplikacja składa się z trzech projektów: projektu CMS, projektu wyświetlającego dane dla użytkowników oraz podpiętej do nich bazy danych stworzonej metodą Code First.",
+  features: [
+    "widoki dla użytkowników stworzone w frameworku Materialize",
+    "CMS jest ostylowany za pomocą frameworku Bootstrap",
+    "wzorzec projektowy MVC",
+    "koszyk przechowujący zakupy",
+    "baza danych utworzona za pomocą Entity Framework Code First",
+  ],
+  videos: Videos.hotelweb,
+};
+
+const projectsDescriptions = [projectMyDictionaryDescription, projectErsiDescription, projectCodeFastDescription, projectHotelWebDescription];
 
 export default projectsDescriptions;

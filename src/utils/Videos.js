@@ -9,11 +9,15 @@ import mydictionaryOnboardingVideo from "assets/mydictionaryProject/mydictionary
 import mydictionaryStateVideo from "assets/mydictionaryProject/mydictionary-state.mp4";
 import mydictionaryValidationVideo from "assets/mydictionaryProject/mydictionary-validation.mp4";
 import mydictionaryBackendVideo from "assets/mydictionaryProject/mydictionary-backend.mp4";
+import hotelwebOverviewVideo from "assets/hotelwebProject/hotelweb-overview.mp4";
+import hotelwebCMSVideo from "assets/hotelwebProject/hotelweb-cms.mp4";
+import hotelwebReservationsVideo from "assets/hotelwebProject/hotelweb-reservations.mp4";
 
 const Videos = {
   ersi: [ersiMobileMenuVideo, ersiDesktopMenuVideo, ersiFormVideo, ersiImageListVideo],
   codefast: [codefastMistakesVideo, codefastEndVideo, codefastChartVideo],
   mydictionary: [mydictionaryOnboardingVideo, mydictionaryStateVideo, mydictionaryValidationVideo, mydictionaryBackendVideo],
+  hotelweb: [hotelwebOverviewVideo, hotelwebReservationsVideo, hotelwebCMSVideo],
 };
 
 export default Videos;

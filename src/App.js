@@ -7,6 +7,7 @@ import Home from "pages/Home";
 import ProjectErsi from "pages/ProjectErsi";
 import ProjectCodeFast from "pages/ProjectCodeFast";
 import ProjectMyDictionary from "pages/ProjectMyDictionary";
+import ProjectHotelWeb from "pages/ProjectHotelWeb";
 import routes from "routes";
 
 const components = [
@@ -14,6 +15,7 @@ const components = [
   { path: routes.ersi, Component: ProjectErsi, transitionClasses: "page" },
   { path: routes.codefast, Component: ProjectCodeFast, transitionClasses: "page" },
   { path: routes.mydictionary, Component: ProjectMyDictionary, transitionClasses: "page" },
+  { path: routes.hotelweb, Component: ProjectHotelWeb, transitionClasses: "page" },
 ];
 
 function App() {

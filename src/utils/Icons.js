@@ -12,6 +12,9 @@ import styledComponentsIcon from "assets/icons/styled-components.svg";
 import strapiIcon from "assets/icons/strapi.svg";
 import reactReduxIcon from "assets/icons/redux.svg";
 import mongoDBIcon from "assets/icons/mongoDB.svg";
+import materializeIcon from "assets/icons/materialize.svg";
+import bootstrapIcon from "assets/icons/bootstrap.svg";
+import dotnetcoreIcon from "assets/icons/dotnetcore.svg";
 
 const Icons = {
   react: {
@@ -69,6 +72,18 @@ const Icons = {
   mongoDB: {
     icon: mongoDBIcon,
     name: "MongoDB Atlas",
+  },
+  materialize: {
+    icon: materializeIcon,
+    name: "Materialize",
+  },
+  bootstrap: {
+    icon: bootstrapIcon,
+    name: "Bootstrap",
+  },
+  dotnetcore: {
+    icon: dotnetcoreIcon,
+    name: ".NET Core",
   },
 };
 

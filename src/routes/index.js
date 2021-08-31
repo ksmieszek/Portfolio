@@ -3,6 +3,7 @@ const routes = {
   ersi: "/ersi",
   codefast: "/codefast",
   mydictionary: "/mydictionary",
+  hotelweb: "/hotelweb",
 };
 
 export default routes;
