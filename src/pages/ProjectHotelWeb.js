@@ -1,12 +1,11 @@
 import React from "react";
 import { projectHotelWebDescription } from "utils/ProjectsDescriptions";
-import styled from "styled-components";
+import routes from "routes";
 import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
 import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
 import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
 import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
 import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
-import routes from "routes";
 
 const ProjectErsi = () => {
   return (
@@ -14,7 +13,7 @@ const ProjectErsi = () => {
       <ProjectHeaderTemplate project={projectHotelWebDescription} />
       <ProjectFeaturesTemplate features={projectHotelWebDescription.features} />
       <ProjectInteractionsTemplate videos={projectHotelWebDescription.videos} />
-      <ProjectNextLinkTemplate link={routes.codefast} />
+      <ProjectNextLinkTemplate link={routes.mydictionary} />
     </ProjectContentTepmlate>
   );
 };

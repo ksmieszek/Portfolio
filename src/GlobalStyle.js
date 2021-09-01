@@ -7,38 +7,35 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        /* font-family: 'Segoe UI', sans-serif; */
         font-family: 'Montserrat', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ::-webkit-scrollbar {
+    ::-webkit-scrollbar {
         width: 5px;
-
     }
 
     ::-webkit-scrollbar-track {
-        background: white; 
+        background: #454359; 
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #454359; 
-        background: transparent; 
+        background: #56546a; 
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #56546a; 
-    } */
+        background: #67657b; 
+    }
 
     :root {
-    font-size: 62.5%;
+        font-size: 62.5%;
     }
 
     body {
-        /* background-color: #f3f3f3; */
-        overflow-x: hidden;
+        background-color: #34333b;
         color: white;
+        overflow-x: hidden;
     }
 
     a {
@@ -46,14 +43,7 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    .page {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    .main {
+    .home, .project {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -61,43 +51,28 @@ const GlobalStyle = createGlobalStyle`
         right: 0;
     }
 
-    /* 
-    */
-
-    .page-enter {
-        
-        position: fixed;
-        transform: translateX(100%);
-        z-index: 998;
-    }
-    .page-enter-active {
-        position: fixed;
-        transform: translateX(0%);
-        transition: transform 700ms 200ms ;
-    }
-    .page-enter-done {
-    }
-    .page-exit {
-    }
-    .page-exit-active {
-    }
-
-    /* 
-    */
-
-    .main-enter {
+    .home-enter {
         position: fixed;
         transform: translateX(-100%);
         z-index: 998;
     }
-    .main-enter-active {
+
+    .home-enter-active {
         position: fixed;
         transform: translateX(0);
         transition: transform 700ms 200ms ;
     }
-    .main-exit {
+
+    .project-enter {
+        position: fixed;
+        transform: translateX(100%);
+        z-index: 998;
     }
-    .main-exit-active {
+
+    .project-enter-active {
+        position: fixed;
+        transform: translateX(0%);
+        transition: transform 700ms 200ms ;
     }
 `;
 

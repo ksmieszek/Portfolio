@@ -1,6 +1,11 @@
+import React, { useEffect, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import TransitionScreen from "components/atoms/TransitionScreen";
 import LinkButton from "components/atoms/LinkButton";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -31,13 +36,29 @@ const StyledProjectContentWrapper = styled.div`
 `;
 
 const ProjectContentTemplate = (props) => {
+  let history = useHistory();
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    let delay = 2.5;
+    if (history.action === "POP") delay = 0.5;
+
+    gsap.from(wrapper.current.children, {
+      autoAlpha: 0,
+      duration: 0.4,
+      y: 30,
+      stagger: 0.4,
+      delay: delay,
+    });
+  }, []);
+
   return (
     <StyledWrapper>
       <TransitionScreen />
       <LinkButton link={`/#${props.projectId}`} back small>
         BACK
       </LinkButton>
-      <StyledProjectContentWrapper>{props.children}</StyledProjectContentWrapper>
+      <StyledProjectContentWrapper ref={wrapper}>{props.children}</StyledProjectContentWrapper>
     </StyledWrapper>
   );
 };

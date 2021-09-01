@@ -142,6 +142,8 @@ const Navigation = ({ activeNavLink }) => {
     const HamburgerFisrtLineAnimation = gsap.to(hamburgerRef.current.children[0], { background: "white", duration: 0.2, paused: true });
     const HamburgerSecondLineAnimation = gsap.to(hamburgerRef.current.children[1], { background: "white", duration: 0.2, paused: true });
 
+    gsap.fromTo(navRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, delay: 2.1 });
+
     ScrollTrigger.create({
       trigger: navRef.current,
       start: "bottom top",

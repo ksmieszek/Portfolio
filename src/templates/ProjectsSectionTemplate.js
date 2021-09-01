@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import projectsDescriptions from "utils/ProjectsDescriptions";
 import styled from "styled-components";
 import ExternalLinks from "components/molecules/ExternalLinks";
 import LinkButton from "components/atoms/LinkButton";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const StyledWrapper = styled.div`
   width: 100%;
-  /* margin: 50px 0; */
-  padding: 200px 0;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #34333b;
-  /* clip-path: polygon(33% 0, 100% 40px, 100% calc(100% - 40px), 67% 100%, 0 calc(100% - 40px), 0 40px); */
+`;
 
-  @media (min-width: 1440px) {
-    /* clip-path: polygon(33% 0, 100% 120px, 100% calc(100% - 120px), 67% 100%, 0 calc(100% - 120px), 0 120px); */
-  }
+const StyledSectionName = styled.h2`
+  margin: 50px 0;
+  font-size: 2.9rem;
+  font-weight: 500;
 `;
 
 const StyledProjectWrapper = styled.div`
@@ -41,7 +44,6 @@ const StyledImageWrapper = styled.div`
   width: 100%;
   max-width: 800px;
   margin-bottom: 25px;
-  /* filter: drop-shadow(1px 1px 0px rgba(253, 224, 24, 1)); */
   filter: drop-shadow(5px 5px 2px rgba(253, 224, 24, 1));
 `;
 
@@ -51,11 +53,6 @@ const StyledImage = styled.img`
   max-height: 450px;
   border-radius: 5px;
   clip-path: polygon(100% 0, 100% 85%, 85% 100%, 0 100%, 0 0);
-  /* box-shadow: rgb(0 0 0 / 20%) 0px 5px 30px; */
-
-  @media (min-width: 1440px) {
-    /* box-shadow: -10px -10px 0px 0px #ddd, rgb(0 0 0 / 20%) 0px 5px 30px; */
-  }
 `;
 
 const StyledContent = styled.div`
@@ -73,11 +70,12 @@ const StyledContent = styled.div`
 
 const StyledTitle = styled.h2`
   margin-bottom: 20px;
-  font-size: 2.9rem;
+  font-size: 2.4rem;
   font-weight: 500;
 
   @media (min-width: 1440px) {
     margin-bottom: 50px;
+    font-size: 2.9rem;
   }
 `;
 
@@ -176,12 +174,27 @@ const StyledExternalLinksWrapper = styled.div`
 `;
 
 const ProjectsSection = React.forwardRef((props, ref) => {
-  const handleRouteChange = (path) => {
-    // setActiveNavLink(null);
+  const handleRouteChange = function () {
+    props.setActiveNavLink(null);
   };
+
+  useEffect(() => {
+    [...ref.current.children].forEach((item) => {
+      gsap.from(item, {
+        autoAlpha: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: item,
+          start: "top 70%",
+          // markers: true,
+        },
+      });
+    });
+  }, []);
 
   return (
     <StyledWrapper id="projects" ref={ref}>
+      <StyledSectionName>Projekty</StyledSectionName>
       {projectsDescriptions.map((item) => {
         return (
           <StyledProjectWrapper id={item.id} key={item.id}>
@@ -207,7 +220,9 @@ const ProjectsSection = React.forwardRef((props, ref) => {
               <StyledExternalLinksWrapper>
                 <ExternalLinks github={item.githubLink} site={item.siteLink} />
               </StyledExternalLinksWrapper>
-              <LinkButton link={item.path}>SZCZEGÓŁY</LinkButton>
+              <LinkButton link={item.path} onClick={handleRouteChange}>
+                SZCZEGÓŁY
+              </LinkButton>
             </StyledLinksWrapper>
           </StyledProjectWrapper>
         );

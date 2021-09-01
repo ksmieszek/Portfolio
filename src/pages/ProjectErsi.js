@@ -1,14 +1,14 @@
 import React from "react";
 import { projectErsiDescription } from "utils/ProjectsDescriptions";
+import routes from "routes";
 import styled from "styled-components";
 import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
 import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
 import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
 import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
+import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
 import SectionTitle from "components/atoms/SectionTitle";
 import ersiViewsImage from "assets/ersiProject/ersi-views.png";
-import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
-import routes from "routes";
 
 const StyledViewsWrapper = styled.div`
   margin-top: 70px;

@@ -1,12 +1,11 @@
 import React from "react";
 import { projectMyDictionaryDescription } from "utils/ProjectsDescriptions";
-// import styled from "styled-components";
+import routes from "routes";
 import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
 import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
 import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
 import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
 import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
-import routes from "routes";
 
 const ProjectMyDictionary = () => {
   return (
@@ -14,7 +13,7 @@ const ProjectMyDictionary = () => {
       <ProjectHeaderTemplate project={projectMyDictionaryDescription} />
       <ProjectFeaturesTemplate features={projectMyDictionaryDescription.features} />
       <ProjectInteractionsTemplate videos={projectMyDictionaryDescription.videos} />
-      <ProjectNextLinkTemplate link={routes.codefast} />
+      <ProjectNextLinkTemplate link={routes.ersi} />
     </ProjectContentTepmlate>
   );
 };
