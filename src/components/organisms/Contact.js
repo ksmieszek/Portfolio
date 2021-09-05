@@ -48,12 +48,17 @@ const StyledLinkWrapper = styled.div`
 const StyledLink = styled.a`
   display: flex;
   align-items: center;
+  margin-right: 20px;
 `;
 
 const StyledIcon = styled.img`
   width: 50px;
   height: 50px;
-  margin-right: 20px;
+  border-radius: 50px;
+
+  &:hover {
+    box-shadow: rgb(255 255 255) 0px 0px 30px -10px;
+  }
 `;
 
 const StyledLinkName = styled.span`
@@ -85,6 +90,7 @@ const Contact = React.forwardRef((props, ref) => {
       icon: contactPhoneIcon,
       name: "Telefon",
       description: "+48 508 550 089",
+      link: "tel:508 550 089",
     },
   ];
 
