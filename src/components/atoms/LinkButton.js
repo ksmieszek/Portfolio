@@ -16,6 +16,7 @@ const StyledWrapper = styled(Link)`
   font-weight: 500;
   color: rgb(247, 224, 24);
   cursor: pointer;
+  z-index: 1;
 
   ::before {
     content: "";
