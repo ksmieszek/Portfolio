@@ -49,6 +49,12 @@ const StyledDetailWrapper = styled.div`
     &:last-child {
       padding-bottom: 0px;
     }
+
+    &:only-child {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   @media (min-width: 1440px) {

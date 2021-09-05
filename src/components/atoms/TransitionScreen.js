@@ -46,11 +46,13 @@ const TransitionScreen = ({ fromLeft }) => {
       moveOnXAxis = "-100vw";
     }
 
-    const tl = gsap.timeline();
-    tl.to(Cover.current, { scaleX: 0, transformOrigin: transformOrigin, duration: 0.4, ease: "power1.out" }, "0.9");
-    tl.to(Cover.current, { scaleX: 1, duration: 0.6, ease: "power1.out" }, ">0.4");
+    const tl = gsap.timeline({
+      defaults: { ease: "power1.out" },
+    });
+    tl.to(Cover.current, { scaleX: 0, transformOrigin: transformOrigin, duration: 0.4 }, "0.9");
+    tl.to(Cover.current, { scaleX: 1, duration: 0.6 }, ">0.4");
     tl.to(window, { scrollTo: scrollTo });
-    tl.fromTo(CoverContainer.current, { x: "0" }, { x: moveOnXAxis, duration: 0.4, ease: "power1.out" }, "<");
+    tl.fromTo(CoverContainer.current, { x: "0" }, { x: moveOnXAxis, duration: 0.4 }, "<");
   }, []);
 
   return (

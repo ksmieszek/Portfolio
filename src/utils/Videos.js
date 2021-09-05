@@ -1,10 +1,10 @@
 import codefastMistakesVideo from "assets/codefastProject/codefast-mistakes.mp4";
 import codefastEndVideo from "assets/codefastProject/codefast-end.mp4";
 import codefastChartVideo from "assets/codefastProject/codefast-chart.mp4";
-import ersiMobileMenuVideo from "assets/ersiProject/ersi-mobile-menu.mp4";
-import ersiDesktopMenuVideo from "assets/ersiProject/ersi-desktop-menu.mp4";
-import ersiFormVideo from "assets/ersiProject/ersi-form.mp4";
-import ersiImageListVideo from "assets/ersiProject/ersi-image-list.mp4";
+import pixelperfectMobileMenuVideo from "assets/pixelperfectProject/pixelperfect-mobile-menu.mp4";
+import pixelperfectDesktopMenuVideo from "assets/pixelperfectProject/pixelperfect-desktop-menu.mp4";
+import pixelperfectFormVideo from "assets/pixelperfectProject/pixelperfect-form.mp4";
+import pixelperfectImageListVideo from "assets/pixelperfectProject/pixelperfect-image-list.mp4";
 import mydictionaryOnboardingVideo from "assets/mydictionaryProject/mydictionary-onboarding.mp4";
 import mydictionaryStateVideo from "assets/mydictionaryProject/mydictionary-state.mp4";
 import mydictionaryValidationVideo from "assets/mydictionaryProject/mydictionary-validation.mp4";
@@ -12,12 +12,16 @@ import mydictionaryBackendVideo from "assets/mydictionaryProject/mydictionary-ba
 import hotelwebOverviewVideo from "assets/hotelwebProject/hotelweb-overview.mp4";
 import hotelwebCMSVideo from "assets/hotelwebProject/hotelweb-cms.mp4";
 import hotelwebReservationsVideo from "assets/hotelwebProject/hotelweb-reservations.mp4";
+import hotelmanagementVideo from "assets/hotelmanagementProject/hotelmanagement.mp4";
+import hoteldesktopVideo from "assets/hoteldesktopProject/hoteldesktop.mp4";
 
 const Videos = {
-  ersi: [ersiMobileMenuVideo, ersiDesktopMenuVideo, ersiFormVideo, ersiImageListVideo],
+  pixelperfect: [pixelperfectMobileMenuVideo, pixelperfectDesktopMenuVideo, pixelperfectFormVideo, pixelperfectImageListVideo],
   codefast: [codefastMistakesVideo, codefastEndVideo, codefastChartVideo],
   mydictionary: [mydictionaryOnboardingVideo, mydictionaryStateVideo, mydictionaryValidationVideo, mydictionaryBackendVideo],
   hotelweb: [hotelwebOverviewVideo, hotelwebReservationsVideo, hotelwebCMSVideo],
+  hotelmanagement: [hotelmanagementVideo],
+  hoteldesktop: [hoteldesktopVideo],
 };
 
 export default Videos;

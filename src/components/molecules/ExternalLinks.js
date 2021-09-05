@@ -1,30 +1,36 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Icons from "utils/Icons";
 
 const StyledLink = styled.a`
-  margin-right: 10px;
   padding: 10px;
   display: inline-block;
+  border-radius: 10px;
   cursor: pointer;
 
-  @media (min-width: 768px) {
-    margin-right: 20px;
-  }
-
-  @media (min-width: 1024px) {
-    margin-right: 30px;
-  }
-
   &:hover {
-    border-radius: 10px;
     background: #403f4b;
   }
+
+  ${(props) =>
+    props.second &&
+    css`
+      margin-left: 10px;
+
+      @media (min-width: 768px) {
+        margin-left: 20px;
+      }
+
+      @media (min-width: 1024px) {
+        margin-left: 30px;
+      }
+    `}
 `;
 
 const StyledLinkIcon = styled.img`
   width: 20px;
   height: 20px;
+  vertical-align: middle;
 
   @media (min-width: 768px) {
     width: 25px;
@@ -36,12 +42,12 @@ const ExternalLinks = ({ github, site }) => {
   return (
     <>
       {github && (
-        <StyledLink href={github}>
+        <StyledLink href={github} target="_blank">
           <StyledLinkIcon src={Icons.github.icon} alt="" />
         </StyledLink>
       )}
       {site && (
-        <StyledLink href={site}>
+        <StyledLink href={site} target="_blank" second>
           <StyledLinkIcon src={Icons.externalLink.icon} alt="" />
         </StyledLink>
       )}

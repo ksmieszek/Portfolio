@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import contactGithubIcon from "assets/icons/contact-github.svg";
 import contactEmailIcon from "assets/icons/contact-email.svg";
 import contactPhoneIcon from "assets/icons/contact-phone.svg";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -70,8 +67,6 @@ const StyledLinkDescription = styled.p`
 `;
 
 const Contact = React.forwardRef((props, ref) => {
-  useEffect(() => {}, []);
-
   const links = [
     {
       icon: contactEmailIcon,

@@ -5,17 +5,23 @@ import routes from "routes";
 import GlobalStyle from "GlobalStyle";
 import Navigation from "components/organisms/Navigation";
 import Home from "pages/Home";
-import ProjectErsi from "pages/ProjectErsi";
+import ProjectPixelPerfect from "pages/ProjectPixelPerfect";
 import ProjectCodeFast from "pages/ProjectCodeFast";
 import ProjectMyDictionary from "pages/ProjectMyDictionary";
 import ProjectHotelWeb from "pages/ProjectHotelWeb";
+import ProjectHotelManagement from "pages/ProjectHotelManagement";
+import ProjectHotelDesktop from "pages/ProjectHotelDesktop";
+import ProjectPortfolio from "pages/ProjectPortfolio";
 
 const components = [
   { path: "/", Component: Home, transitionClasses: "home" },
-  { path: routes.ersi, Component: ProjectErsi, transitionClasses: "project" },
+  { path: routes.pixelperfect, Component: ProjectPixelPerfect, transitionClasses: "project" },
   { path: routes.codefast, Component: ProjectCodeFast, transitionClasses: "project" },
   { path: routes.mydictionary, Component: ProjectMyDictionary, transitionClasses: "project" },
   { path: routes.hotelweb, Component: ProjectHotelWeb, transitionClasses: "project" },
+  { path: routes.hotelmanagement, Component: ProjectHotelManagement, transitionClasses: "project" },
+  { path: routes.hoteldesktop, Component: ProjectHotelDesktop, transitionClasses: "project" },
+  { path: routes.portfolio, Component: ProjectPortfolio, transitionClasses: "project" },
 ];
 
 function App() {

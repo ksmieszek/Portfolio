@@ -20,7 +20,7 @@ const StyledHeaderTitle = styled.div`
 
 const StyledDescription = styled.div`
   margin-top: 20px;
-  padding-right: 30px;
+  padding-right: 10px;
   font-size: 1.4rem;
 
   @media (min-width: 768px) {
@@ -29,7 +29,7 @@ const StyledDescription = styled.div`
   }
 `;
 
-const ProjectHeaderTemplate = ({ project }) => {
+const ProjectHeaderTemplate = ({ project, children }) => {
   return (
     <StyledWrapper>
       <StyledHeaderWrapper>
@@ -39,6 +39,7 @@ const ProjectHeaderTemplate = ({ project }) => {
         </div>
       </StyledHeaderWrapper>
       {project.detailedDescription && <StyledDescription>{project.detailedDescription}</StyledDescription>}
+      {children}
     </StyledWrapper>
   );
 };

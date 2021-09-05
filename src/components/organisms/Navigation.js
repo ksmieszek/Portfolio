@@ -148,9 +148,6 @@ const Navigation = ({ activeNavLink }) => {
       trigger: navRef.current,
       start: "bottom top",
       end: 9999 + "top",
-      // end: () => {
-      //   return ScrollTrigger.maxScroll(window) + 300;
-      // },
       // markers: true,
       onToggle: (self) => {
         if (self.isActive) {

@@ -4,8 +4,6 @@ import styled from "styled-components";
 import TransitionScreen from "components/atoms/TransitionScreen";
 import LinkButton from "components/atoms/LinkButton";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -44,9 +42,9 @@ const ProjectContentTemplate = (props) => {
     if (history.action === "POP") delay = 0.5;
 
     gsap.from(wrapper.current.children, {
+      y: 30,
       autoAlpha: 0,
       duration: 0.4,
-      y: 30,
       stagger: 0.4,
       delay: delay,
     });

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import projectsDescriptions from "utils/ProjectsDescriptions";
+import { mainProjectsDescriptions, otherProjectsDescriptions } from "utils/ProjectsDescriptions";
 import styled from "styled-components";
+import OtherProjectsTemplate from "templates/OtherProjectsTemplate";
 import ExternalLinks from "components/molecules/ExternalLinks";
 import LinkButton from "components/atoms/LinkButton";
 import { gsap } from "gsap";
@@ -169,7 +170,7 @@ const StyledLinksWrapper = styled.div`
 
 const StyledExternalLinksWrapper = styled.div`
   @media (min-width: 1440px) {
-    margin-right: 100px;
+    margin-right: 50px;
   }
 `;
 
@@ -195,7 +196,7 @@ const ProjectsSection = React.forwardRef((props, ref) => {
   return (
     <StyledWrapper id="projects" ref={ref}>
       <StyledSectionName>Projekty</StyledSectionName>
-      {projectsDescriptions.map((item) => {
+      {mainProjectsDescriptions.map((item) => {
         return (
           <StyledProjectWrapper id={item.id} key={item.id}>
             <StyledContent>
@@ -227,6 +228,7 @@ const ProjectsSection = React.forwardRef((props, ref) => {
           </StyledProjectWrapper>
         );
       })}
+      <OtherProjectsTemplate projects={otherProjectsDescriptions} />
     </StyledWrapper>
   );
 });

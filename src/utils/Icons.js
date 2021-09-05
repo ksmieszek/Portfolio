@@ -1,6 +1,4 @@
 import reactIcon from "assets/icons/react.svg";
-import gsapIcon from "assets/icons/gsap.svg";
-import tailwindcssIcon from "assets/icons/tailwindcss.svg";
 import cssIcon from "assets/icons/css.svg";
 import externalLinkIcon from "assets/icons/external-link.svg";
 import githubIcon from "assets/icons/github.svg";
@@ -17,22 +15,6 @@ import bootstrapIcon from "assets/icons/bootstrap.svg";
 import dotnetcoreIcon from "assets/icons/dotnetcore.svg";
 
 const Icons = {
-  react: {
-    icon: reactIcon,
-    name: "React",
-  },
-  gsap: {
-    icon: gsapIcon,
-    name: "GSAP",
-  },
-  tailwindcss: {
-    icon: tailwindcssIcon,
-    name: "Tailwindcss",
-  },
-  css: {
-    icon: cssIcon,
-    name: "CSS",
-  },
   externalLink: {
     icon: externalLinkIcon,
     name: "external link",
@@ -40,6 +22,14 @@ const Icons = {
   github: {
     icon: githubIcon,
     name: "github",
+  },
+  react: {
+    icon: reactIcon,
+    name: "React",
+  },
+  css: {
+    icon: cssIcon,
+    name: "CSS",
   },
   jscharting: {
     icon: jschartingIcon,
@@ -59,7 +49,7 @@ const Icons = {
   },
   styledComponents: {
     icon: styledComponentsIcon,
-    name: "Styled-components",
+    name: "Styled Components",
   },
   strapi: {
     icon: strapiIcon,

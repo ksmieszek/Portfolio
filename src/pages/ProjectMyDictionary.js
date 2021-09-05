@@ -13,7 +13,7 @@ const ProjectMyDictionary = () => {
       <ProjectHeaderTemplate project={projectMyDictionaryDescription} />
       <ProjectFeaturesTemplate features={projectMyDictionaryDescription.features} />
       <ProjectInteractionsTemplate videos={projectMyDictionaryDescription.videos} />
-      <ProjectNextLinkTemplate link={routes.ersi} />
+      <ProjectNextLinkTemplate link={routes.pixelperfect} />
     </ProjectContentTepmlate>
   );
 };

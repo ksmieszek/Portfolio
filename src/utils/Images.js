@@ -1,10 +1,10 @@
-import ersi from "assets/images/projectsPosters/ersi.png";
+import pixelperfect from "assets/images/projectsPosters/pixelperfect.png";
 import codefast from "assets/images/projectsPosters/codefast.png";
 import mydictionary from "assets/images/projectsPosters/mydictionary.png";
 import hotelweb from "assets/images/projectsPosters/hotelweb.png";
 
 const Images = {
-  ersi,
+  pixelperfect,
   codefast,
   mydictionary,
   hotelweb,
