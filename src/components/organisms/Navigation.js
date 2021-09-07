@@ -15,6 +15,8 @@ const StyledNavWrapper = styled.nav`
   background-color: transparent;
   z-index: 998;
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
 
   @media (min-width: 1440px) {
     pointer-events: all;
@@ -139,10 +141,8 @@ const Navigation = ({ activeNavLink }) => {
     const animation1 = gsap.to(navRef.current, { backgroundColor: "#1c1d25", duration: 0.4, paused: true });
     const animation2 = gsap.to(boxShadowRef.current, { autoAlpha: 1, duration: 0.4, paused: true });
     const animation3 = gsap.to(hamburgerRef.current, { background: "black", duration: 0.2, paused: true });
-    const HamburgerFisrtLineAnimation = gsap.to(hamburgerRef.current.children[0], { background: "white", duration: 0.2, paused: true });
-    const HamburgerSecondLineAnimation = gsap.to(hamburgerRef.current.children[1], { background: "white", duration: 0.2, paused: true });
 
-    gsap.fromTo(navRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, delay: 2.1 });
+    gsap.to(navRef.current, { autoAlpha: 1, duration: 0.4, delay: 3 });
 
     ScrollTrigger.create({
       trigger: navRef.current,
@@ -156,15 +156,11 @@ const Navigation = ({ activeNavLink }) => {
             animation2.play();
           } else {
             animation3.play();
-            HamburgerFisrtLineAnimation.play();
-            HamburgerSecondLineAnimation.play();
           }
         } else {
           animation1.reverse();
           animation2.reverse();
           animation3.reverse();
-          HamburgerFisrtLineAnimation.reverse();
-          HamburgerSecondLineAnimation.reverse();
         }
       },
     });

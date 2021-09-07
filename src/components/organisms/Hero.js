@@ -40,6 +40,7 @@ const StyledOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  transform: translateX(-110%);
   background-color: #f7e018;
 `;
 
@@ -47,6 +48,8 @@ const StyledName = styled.img`
   height: 40px;
   margin: 5px 0;
   user-select: none;
+  opacity: 0;
+  visibility: hidden;
 
   @media (min-width: 768px) {
     height: 55px;
@@ -61,6 +64,8 @@ const StyledTitle = styled.h3`
   margin: 5px 0;
   font-size: 1.8rem;
   font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
 
   @media (min-width: 768px) {
     font-size: 2.2rem;
@@ -95,15 +100,17 @@ const StyledContactLink = styled(Link)`
 `;
 
 const Hero = React.forwardRef((props, ref) => {
-  const textOverla1 = useRef(null);
-  const textOverla2 = useRef(null);
+  const textOverlay1 = useRef(null);
+  const textOverlay2 = useRef(null);
+  const text1 = useRef(null);
+  const text2 = useRef(null);
   const contactButton = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
-    tl.to(textOverla1.current, { x: "110%", duration: 0.4, delay: 0.4 });
-    tl.to(textOverla2.current, { x: "110%", duration: 0.4 }, "<");
-    tl.to(contactButton.current, { autoAlpha: 1, delay: 0.5 });
+    tl.fromTo([textOverlay1.current, textOverlay2.current], { x: "-110%", duration: 0.8 }, { x: "110%" }, "1");
+    tl.to([text1.current, text2.current], { autoAlpha: 1, duration: 0 }, "-=.4");
+    tl.to(contactButton.current, { autoAlpha: 1 }, "+=0.5");
   }, []);
 
   return (
@@ -111,13 +118,13 @@ const Hero = React.forwardRef((props, ref) => {
       <StyledHeroContent>
         <div>
           <StyledLineWrapper>
-            <StyledOverlay ref={textOverla1} />
-            <StyledName src={signature} alt="" />
+            <StyledOverlay ref={textOverlay1} />
+            <StyledName ref={text1} src={signature} alt="" />
           </StyledLineWrapper>
           <StyledLineWrapper>
             <StyledTextWrapper>
-              <StyledOverlay ref={textOverla2} />
-              <StyledTitle>Junior Frontend Developer</StyledTitle>
+              <StyledOverlay ref={textOverlay2} />
+              <StyledTitle ref={text2}>Junior Frontend Developer</StyledTitle>
             </StyledTextWrapper>
           </StyledLineWrapper>
         </div>
