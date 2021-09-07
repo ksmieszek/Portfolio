@@ -46,6 +46,12 @@ const TransitionScreen = ({ fromLeft }) => {
       moveOnXAxis = "-100vw";
     }
 
+    const currentScrollPositionToRestore = document.documentElement.scrollTop;
+    //set window scroll to 0 so ScrollTrigger takes top of viewport as initial position instead of current scroll position
+    gsap.set(window, { scrollTo: 0 });
+    //back to previous scroll position asap
+    gsap.set(window, { scrollTo: currentScrollPositionToRestore, delay: 0.01 });
+
     const tl = gsap.timeline({
       defaults: { ease: "power1.out" },
     });
