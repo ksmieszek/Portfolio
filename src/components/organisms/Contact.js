@@ -18,7 +18,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledSectionName = styled.h2`
-  font-size: 2.9rem;
+  font-size: 4rem;
   font-weight: 500;
 `;
 

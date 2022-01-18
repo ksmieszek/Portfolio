@@ -137,11 +137,36 @@ export const projectPortfolioDescription = {
     "Przejścia pomiędzy podstronami zostały obsłużone przez pakiet React Transition Group, oraz ostylowane przy pomocy GSAP i CSS. ScrollTrigger wpływa na animacje wejścia kolejnych projektów oraz styl elementów nawigacji w tym aktywnego linku.",
   technologies: ["React", "GSAP", "Styled Components"],
   path: routes.portfolio,
-
   features: ["page transitions", "animacje w GSAP", "Atomic Design, Styled Components, RWD, Mobile First"],
 };
 
+export const projectECommerceDescription = {
+  id: "ecommerce",
+  title: "eCommerce",
+  description:
+    "Projekt sklepu internetowego z odzieżą. Wyświetlane produkty są filtrowane na podstawie adresu URL, a z kategorii do których te produkty należą generowany jest formularz filtrujący.",
+  technologies: [Icons.react, Icons.reactRedux, Icons.firebase, Icons.reacthookform, Icons.sass],
+  image: Images.ecommerce,
+  githubLink: "https://github.com/ksmieszek/E-Commerce",
+  siteLink: "https://app-e-commerce.netlify.app/",
+  path: routes.ecommerce,
+  detailedDescription:
+    "Ze sklepu można korzystać będąc jak i nie będąc jak zalogowanym, przy czym zalogować możemy się jedynie za pomocą konta Google. Będąc zalogowanym - produkty znajdujące się w koszyku, adres dostawy oraz oglądane wcześniej produkty przechowywane będą w bazie.",
+  features: [
+    "część danych jest przechowywana za pomocą Firebase(produkty, zamówienia, użytkownicy), część za pomocą Redux-Persist(niezalogowani użytkownicy)",
+    "przechowywanie dodanych produktów do koszyka, adresu dostawy, wcześniej oglądanych produktów, układu(grid) wyświetlanych produktów",
+    "automatycznie generowane pola formularza oraz walidacja  przy pomocy React-Hook-Form&Yup",
+    "filtrowanie produktów oraz wypełnianie formularzy na podstawie adresu URL",
+    "sterowanie kolejnością oraz układem wyświetlanych produktów",
+    "RWD, Mobile First",
+    "zaawansowany search bar, multi step form, image sliders",
+    "użycie: Redux Toolkit, Scss, CSS Modules, Splide(slider package), Custom Hooks, Context",
+  ],
+  videos: Videos.ecommerce,
+};
+
 export const mainProjectsDescriptions = [
+  projectECommerceDescription,
   projectMyDictionaryDescription,
   projectPixelPerfectDescription,
   projectCodeFastDescription,

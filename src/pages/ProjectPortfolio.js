@@ -11,7 +11,7 @@ const ProjectPortfolio = () => {
     <ProjectContentTepmlate projectId={projectPortfolioDescription.id}>
       <ProjectHeaderTemplate project={projectPortfolioDescription} />
       <ProjectFeaturesTemplate features={projectPortfolioDescription.features} />
-      <ProjectNextLinkTemplate link={routes.mydictionary} />
+      <ProjectNextLinkTemplate link={routes.ecommerce} />
     </ProjectContentTepmlate>
   );
 };

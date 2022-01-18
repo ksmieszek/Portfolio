@@ -14,6 +14,10 @@ import hotelwebCMSVideo from "assets/hotelwebProject/hotelweb-cms.mp4";
 import hotelwebReservationsVideo from "assets/hotelwebProject/hotelweb-reservations.mp4";
 import hotelmanagementVideo from "assets/hotelmanagementProject/hotelmanagement.mp4";
 import hoteldesktopVideo from "assets/hoteldesktopProject/hoteldesktop.mp4";
+import ecommerceOrderVideo from "assets/ecommerceProject/ecommerce-order.mp4";
+import ecommerceProductsVideo from "assets/ecommerceProject/ecommerce-products.mp4";
+import ecommerceSearchVideo from "assets/ecommerceProject/ecommerce-search.mp4";
+import ecommerceFormsVideo from "assets/ecommerceProject/ecommerce-forms.mp4";
 
 const Videos = {
   pixelperfect: [pixelperfectMobileMenuVideo, pixelperfectDesktopMenuVideo, pixelperfectFormVideo, pixelperfectImageListVideo],
@@ -22,6 +26,7 @@ const Videos = {
   hotelweb: [hotelwebOverviewVideo, hotelwebReservationsVideo, hotelwebCMSVideo],
   hotelmanagement: [hotelmanagementVideo],
   hoteldesktop: [hoteldesktopVideo],
+  ecommerce: [ecommerceProductsVideo, ecommerceSearchVideo, ecommerceOrderVideo, ecommerceFormsVideo],
 };
 
 export default Videos;

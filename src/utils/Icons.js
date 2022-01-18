@@ -13,6 +13,8 @@ import mongoDBIcon from "assets/icons/mongoDB.svg";
 import materializeIcon from "assets/icons/materialize.svg";
 import bootstrapIcon from "assets/icons/bootstrap.svg";
 import dotnetcoreIcon from "assets/icons/dotnetcore.svg";
+import sassIcon from "assets/icons/sass.svg";
+import firebaseIcon from "assets/icons/firebase.svg";
 
 const Icons = {
   externalLink: {
@@ -74,6 +76,14 @@ const Icons = {
   dotnetcore: {
     icon: dotnetcoreIcon,
     name: ".NET Core",
+  },
+  sass: {
+    icon: sassIcon,
+    name: "Sass",
+  },
+  firebase: {
+    icon: firebaseIcon,
+    name: "Firebase",
   },
 };
 

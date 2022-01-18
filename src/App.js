@@ -12,6 +12,7 @@ import ProjectHotelWeb from "pages/ProjectHotelWeb";
 import ProjectHotelManagement from "pages/ProjectHotelManagement";
 import ProjectHotelDesktop from "pages/ProjectHotelDesktop";
 import ProjectPortfolio from "pages/ProjectPortfolio";
+import ProjectEcommerce from "pages/ProjectEcommerce";
 
 const components = [
   { path: "/", Component: Home, transitionClasses: "home" },
@@ -22,6 +23,7 @@ const components = [
   { path: routes.hotelmanagement, Component: ProjectHotelManagement, transitionClasses: "project" },
   { path: routes.hoteldesktop, Component: ProjectHotelDesktop, transitionClasses: "project" },
   { path: routes.portfolio, Component: ProjectPortfolio, transitionClasses: "project" },
+  { path: routes.ecommerce, Component: ProjectEcommerce, transitionClasses: "project" },
 ];
 
 function App() {

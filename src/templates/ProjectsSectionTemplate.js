@@ -19,8 +19,12 @@ const StyledWrapper = styled.div`
 
 const StyledSectionName = styled.h2`
   margin: 50px 0;
-  font-size: 2.9rem;
+  font-size: 4rem;
   font-weight: 500;
+
+  @media (min-width: 1440px) {
+    font-size: 5rem;
+  }
 `;
 
 const StyledProjectWrapper = styled.div`

@@ -7,6 +7,7 @@ const routes = {
   hotelmanagement: "/hotelmanagement",
   hoteldesktop: "/hoteldesktop",
   portfolio: "/portfolio",
+  ecommerce: "/ecommerce",
 };
 
 export default routes;
