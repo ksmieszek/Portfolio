@@ -5,7 +5,7 @@ import ArrowSign from "./ArrowSign";
 
 const StyledWrapper = styled(Link)`
   position: relative;
-  width: 200px;
+  width: 180px;
   height: 50px;
   display: flex;
   justify-content: center;

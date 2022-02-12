@@ -166,11 +166,11 @@ const Hero = React.forwardRef((props, ref) => {
           <StyledLineWrapper>
             <StyledTextWrapper>
               <StyledLineOverlay ref={secondLineOverlay} />
-              <StyledTitle ref={secondLine}>Junior Frontend Developer</StyledTitle>
+              <StyledTitle ref={secondLine}>Junior React Developer</StyledTitle>
             </StyledTextWrapper>
           </StyledLineWrapper>
         </div>
-        <StyledCVLink ref={cvLink} href="https://drive.google.com/uc?id=1u98nSRQQdJ6x8XIFt3AXTcTOhkhtlf2k&export=download">
+        <StyledCVLink ref={cvLink} href="https://drive.google.com/uc?id=1I1iOowWVfAzQwdo7s-yMZVo7TDInH_Pz&export=download">
           CV
         </StyledCVLink>
       </StyledHeroContent>

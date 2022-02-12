@@ -7,7 +7,7 @@ export const projectPixelPerfectDescription = {
   id: "pixelperfect",
   title: "Pixel perfect",
   description:
-    "Budując ten projekt starałem się najwierniej odwzorować wygląd oraz interakcje na tej stronie. Najbardziej wymagającym zadaniem było odtworzenie rozbudowanej nawigacji.",
+    "Budując tą stronę starałem się najwierniej odwzorować wygląd oraz interakcje z istniejącej już strony. Najbardziej wymagającym zadaniem było odtworzenie rozbudowanej nawigacji.",
   technologies: [Icons.css, Icons.javascript, Icons.html],
   image: Images.pixelperfect,
   githubLink: "https://github.com/ksmieszek/Pixel-perfect",
@@ -17,7 +17,7 @@ export const projectPixelPerfectDescription = {
     "strona jest responsywna(RWD) i była budowana techniką Mobile First",
     "rozbudowane menu",
     "strona posiada wiele interaktywnych elementów",
-    "podczas dewelopmentu korzystałem z pakietu Browsersync by na bierząco obserwować zmiany na stronie",
+    "podczas dewelopmentu korzystałem z paczki Browsersync by na bierząco obserwować zmiany na stronie",
   ],
   videos: Videos.pixelperfect,
 };
@@ -119,7 +119,7 @@ export const projectHotelManagementDescription = {
   detailedDescription: "Projekt był realizowany w ramach programu studiów.",
   features: [
     "aplikacja ostylowana za pomocą Tailwind CSS",
-    "logowanie i rejestracja zrealizowane jest za pomocą pakietu Laravel Breeze",
+    "logowanie i rejestracja zrealizowane jest za pomocą paczki Laravel Breeze",
     "wzorzec projektowy MVC",
     "baza danych MySQL",
     "walidacja formularzy",
@@ -144,14 +144,15 @@ export const projectECommerceDescription = {
   id: "ecommerce",
   title: "eCommerce",
   description:
-    "Projekt sklepu internetowego z odzieżą. Wyświetlane produkty są filtrowane na podstawie adresu URL, a z kategorii do których te produkty należą generowany jest formularz filtrujący.",
-  technologies: [Icons.react, Icons.reactRedux, Icons.firebase, Icons.reacthookform, Icons.sass],
+    "Projekt sklepu internetowego z odzieżą. Wyświetlane produkty są filtrowane na podstawie adresu URL, a z kategorii do których te produkty należą generowany jest formularz filtrujący. Produktami oraz menu można zarządzać z panelu admina stworzonego w oddzielnym projekcie.",
+  technologies: [Icons.react, Icons.reactRedux, Icons.firebase, Icons.reacthookform, Icons.sass, Icons.materialui],
   image: Images.ecommerce,
   githubLink: "https://github.com/ksmieszek/E-Commerce",
   siteLink: "https://app-e-commerce.netlify.app/",
+  additionalGithubLink: "https://github.com/ksmieszek/E-Commerce-Admin-Panel",
   path: routes.ecommerce,
   detailedDescription:
-    "Ze sklepu można korzystać będąc jak i nie będąc jak zalogowanym, przy czym zalogować możemy się jedynie za pomocą konta Google. Będąc zalogowanym - produkty znajdujące się w koszyku, adres dostawy oraz oglądane wcześniej produkty przechowywane będą w bazie.",
+    "Ze sklepu można korzystać będąc jak i nie będąc jak zalogowanym, przy czym zalogować możemy się jedynie za pomocą konta Google. Będąc zalogowanym - produkty znajdujące się w koszyku, adres dostawy oraz oglądane wcześniej produkty przechowywane będą w bazie.\nProduktami oraz menu można zarządzać z panelu admina stworzonego w oddzielnym projekcie.",
   features: [
     "część danych jest przechowywana za pomocą Firebase(produkty, zamówienia, użytkownicy), część za pomocą Redux-Persist(niezalogowani użytkownicy)",
     "przechowywanie dodanych produktów do koszyka, adresu dostawy, wcześniej oglądanych produktów, układu(grid) wyświetlanych produktów",
@@ -162,7 +163,13 @@ export const projectECommerceDescription = {
     "zaawansowany search bar, multi step form, image sliders",
     "użycie: Redux Toolkit, Scss, CSS Modules, Splide(slider package), Custom Hooks, Context",
   ],
+  additionalFeatures: [
+    "wyświetlanie i zarządzanie danymi w Firebase",
+    "walidacja formularzy przy pomocy React-Hook-Form&Yup",
+    "użycie: MaterialUI, Recharts(chart package), Custom Hooks, Context",
+  ],
   videos: Videos.ecommerce,
+  additionalVideos: Videos.ecommerceAdditional,
 };
 
 export const mainProjectsDescriptions = [

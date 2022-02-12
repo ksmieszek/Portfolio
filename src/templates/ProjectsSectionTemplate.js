@@ -118,7 +118,7 @@ const StyledTechnologiesIcons = styled.div`
 
 const StyledTechnologyIconWrapper = styled.div`
   position: relative;
-  margin: 10px 30px 10px 0;
+  margin: 10px 24px 10px 0;
 `;
 
 const StyledTechnologyIcon = styled.img`
@@ -223,7 +223,7 @@ const ProjectsSection = React.forwardRef((props, ref) => {
             </StyledImageWrapper>
             <StyledLinksWrapper>
               <StyledExternalLinksWrapper>
-                <ExternalLinks github={item.githubLink} site={item.siteLink} />
+                <ExternalLinks github={item.githubLink} site={item.siteLink} additionalGithub={item.additionalGithubLink} />
               </StyledExternalLinksWrapper>
               <LinkButton link={item.path} onClick={handleRouteChange}>
                 SZCZEGÓŁY

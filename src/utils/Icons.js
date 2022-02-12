@@ -15,6 +15,7 @@ import bootstrapIcon from "assets/icons/bootstrap.svg";
 import dotnetcoreIcon from "assets/icons/dotnetcore.svg";
 import sassIcon from "assets/icons/sass.svg";
 import firebaseIcon from "assets/icons/firebase.svg";
+import materialuiIcon from "assets/icons/materialui.svg";
 
 const Icons = {
   externalLink: {
@@ -84,6 +85,10 @@ const Icons = {
   firebase: {
     icon: firebaseIcon,
     name: "Firebase",
+  },
+  materialui: {
+    icon: materialuiIcon,
+    name: "MaterialUI",
   },
 };
 

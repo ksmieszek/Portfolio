@@ -12,19 +12,17 @@ const StyledLink = styled.a`
     background: #403f4b;
   }
 
-  ${(props) =>
-    props.second &&
-    css`
+  &:not(:first-child) {
+    margin-left: 5px;
+
+    @media (min-width: 768px) {
       margin-left: 10px;
+    }
 
-      @media (min-width: 768px) {
-        margin-left: 20px;
-      }
-
-      @media (min-width: 1024px) {
-        margin-left: 30px;
-      }
-    `}
+    @media (min-width: 1024px) {
+      margin-left: 15px;
+    }
+  }
 `;
 
 const StyledLinkIcon = styled.img`
@@ -38,7 +36,7 @@ const StyledLinkIcon = styled.img`
   }
 `;
 
-const ExternalLinks = ({ github, site }) => {
+const ExternalLinks = ({ github, site, additionalGithub }) => {
   return (
     <>
       {github && (
@@ -47,8 +45,13 @@ const ExternalLinks = ({ github, site }) => {
         </StyledLink>
       )}
       {site && (
-        <StyledLink href={site} target="_blank" second>
+        <StyledLink href={site} target="_blank">
           <StyledLinkIcon src={Icons.externalLink.icon} alt="" />
+        </StyledLink>
+      )}
+      {additionalGithub && (
+        <StyledLink href={additionalGithub} target="_blank">
+          <StyledLinkIcon src={Icons.github.icon} alt="" />
         </StyledLink>
       )}
     </>

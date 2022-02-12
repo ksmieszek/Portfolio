@@ -11,8 +11,10 @@ const ProjectEcommerce = () => {
   return (
     <ProjectContentTepmlate projectId={projectECommerceDescription.id}>
       <ProjectHeaderTemplate project={projectECommerceDescription} />
-      <ProjectFeaturesTemplate features={projectECommerceDescription.features} />
+      <ProjectFeaturesTemplate features={projectECommerceDescription.features} title="Cechy projektu strona klienta" />
       <ProjectInteractionsTemplate videos={projectECommerceDescription.videos} />
+      <ProjectFeaturesTemplate features={projectECommerceDescription.additionalFeatures} title="Cechy projektu strona admina" distanceOut={true} />
+      <ProjectInteractionsTemplate videos={projectECommerceDescription.additionalVideos} />
       <ProjectNextLinkTemplate link={routes.mydictionary} />
     </ProjectContentTepmlate>
   );

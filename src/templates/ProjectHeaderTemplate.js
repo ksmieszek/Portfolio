@@ -22,6 +22,7 @@ const StyledDescription = styled.div`
   margin-top: 20px;
   padding-right: 10px;
   font-size: 1.4rem;
+  white-space: pre-wrap;
 
   @media (min-width: 768px) {
     font-size: 1.6rem;
@@ -35,7 +36,7 @@ const ProjectHeaderTemplate = ({ project, children }) => {
       <StyledHeaderWrapper>
         <StyledHeaderTitle>{project.title}</StyledHeaderTitle>
         <div>
-          <ExternalLinks github={project.githubLink} site={project.siteLink} />
+          <ExternalLinks github={project.githubLink} site={project.siteLink} additionalGithub={project.additionalGithubLink} />
         </div>
       </StyledHeaderWrapper>
       {project.detailedDescription && <StyledDescription>{project.detailedDescription}</StyledDescription>}

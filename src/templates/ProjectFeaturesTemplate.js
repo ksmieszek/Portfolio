@@ -10,6 +10,7 @@ const StyledWrapper = styled.div`
 const StyledFeaturesWrapper = styled.div`
   width: 100%;
   margin: 60px auto 0;
+  margin-top: ${(props) => props.distanceOut && "160px"};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,11 +30,11 @@ const StyledFeature = styled.li`
   }
 `;
 
-const ProjectFeaturesTemplate = ({ features }) => {
+const ProjectFeaturesTemplate = ({ features, title = "Cechy projektu", distanceOut = false }) => {
   return features ? (
     <StyledWrapper>
-      <StyledFeaturesWrapper>
-        <SectionTitle>Cechy projektu</SectionTitle>
+      <StyledFeaturesWrapper distanceOut={distanceOut}>
+        <SectionTitle>{title}</SectionTitle>
         <StyledFeaturesList>
           {features.map((item, index) => (
             <StyledFeature key={index}>{item}</StyledFeature>
