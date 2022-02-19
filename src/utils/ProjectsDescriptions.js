@@ -32,9 +32,8 @@ export const projectCodeFastDescription = {
   githubLink: "https://github.com/ksmieszek/Code-fast",
   siteLink: "https://ksmieszek.github.io/Code-fast/",
   path: routes.codefast,
-  detailedDescription: `Wchodząc na stronę można wybrać jeden lub wiele języków programowania oraz czas trwania treningu. Ćwiczenie rozpoczyna się gdy zaczniemy
-          pisać w polu tekstowym. Po zakończeniu sesji pisania kodu zostają wyświetlone jej wyniki. Można też śledzić swój postęp wchodząc do panelu
-          gdzie jest zapisana cała nasza historia kodowania.`,
+  detailedDescription:
+    "Wchodząc na stronę można wybrać jeden lub wiele języków programowania oraz czas trwania treningu. Ćwiczenie rozpoczyna się gdy zaczniemy pisać w polu tekstowym. Po zakończeniu sesji pisania kodu zostają wyświetlone jej wyniki. Można też śledzić swój postęp wchodząc do panelu gdzie jest zapisana cała nasza historia kodowania.",
   features: [
     "program przechowuje historię pisania, wybrane języki oraz wybrany czas w Local Storage",
     "do wyświetlania wykresu program wykorzystuje bibliotekę JSCharting",
