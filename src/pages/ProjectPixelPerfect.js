@@ -2,11 +2,12 @@ import React from "react";
 import { projectPixelPerfectDescription } from "utils/ProjectsDescriptions";
 import routes from "routes";
 import styled from "styled-components";
-import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
-import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
-import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
-import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
-import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
+import { theme } from "theme";
+import ProjectContentTepmlate from "components/templates/ProjectContentTepmlate";
+import ProjectHeaderTemplate from "components/templates/ProjectHeaderTemplate";
+import ProjectFeaturesTemplate from "components/templates/ProjectFeaturesTemplate";
+import ProjectInteractionsTemplate from "components/templates/ProjectInteractionsTemplate";
+import ProjectNextLinkTemplate from "components/templates/ProjectNextLinkTemplate";
 import SectionTitle from "components/atoms/SectionTitle";
 import pixelperfectViewsImage from "assets/pixelperfectProject/pixelperfect-views.png";
 
@@ -35,12 +36,8 @@ const StyledViews = styled.img`
 const StyledParagraph = styled.p`
   width: fit-content;
   margin: 20px auto 0;
-  font-size: 1.2rem;
+  font-size: ${(props) => props.theme.fontSize.xxs};
   text-align: center;
-
-  @media (min-width: 1440px) {
-    font-size: 1.4rem;
-  }
 `;
 
 const ProjectPixelPerfect = () => {
@@ -48,7 +45,7 @@ const ProjectPixelPerfect = () => {
     <ProjectContentTepmlate projectId={projectPixelPerfectDescription.id}>
       <ProjectHeaderTemplate project={projectPixelPerfectDescription}>
         <StyledParagraph>
-          Link do odwzorowywanej strony -{" "}
+          Link do odwzorowywanej strony(która już uległa zmianie) {"- "}
           <a href="https://www.esri.com/en-us/arcgis/products/mapping" target="_blank" rel="noreferrer">
             https://www.esri.com/en-us/arcgis/products/mapping
           </a>
@@ -56,7 +53,7 @@ const ProjectPixelPerfect = () => {
       </ProjectHeaderTemplate>
       <ProjectFeaturesTemplate features={projectPixelPerfectDescription.features} />
       <StyledViewsWrapper>
-        <SectionTitle>Widoki</SectionTitle>
+        <SectionTitle fontSize={theme.fontSize.m}>Widoki</SectionTitle>
         <StyledViews src={pixelperfectViewsImage} alt="" />
       </StyledViewsWrapper>
       <ProjectInteractionsTemplate videos={projectPixelPerfectDescription.videos} />

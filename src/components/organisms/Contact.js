@@ -3,6 +3,8 @@ import styled from "styled-components";
 import contactGithubIcon from "assets/icons/contact-github.svg";
 import contactEmailIcon from "assets/icons/contact-email.svg";
 import contactPhoneIcon from "assets/icons/contact-phone.svg";
+import SectionTitle from "components/atoms/SectionTitle";
+import { theme } from "theme";
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -15,11 +17,6 @@ const StyledWrapper = styled.div`
   @media (min-width: 1440px) {
     padding-top: 200px;
   }
-`;
-
-const StyledSectionName = styled.h2`
-  font-size: 4rem;
-  font-weight: 500;
 `;
 
 const StyledLinksWrapper = styled.div`
@@ -62,13 +59,13 @@ const StyledIcon = styled.img`
 `;
 
 const StyledLinkName = styled.span`
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: ${(props) => props.theme.fontSize.s};
+  font-weight: ${(props) => props.theme.fontWeight.bold};
 `;
 
 const StyledLinkDescription = styled.p`
   margin-top: 10px;
-  font-size: 1.6rem;
+  font-size: ${(props) => props.theme.fontSize.xs};
 `;
 
 const Contact = React.forwardRef((props, ref) => {
@@ -96,7 +93,9 @@ const Contact = React.forwardRef((props, ref) => {
 
   return (
     <StyledWrapper id="contact" ref={ref}>
-      <StyledSectionName>Kontakt</StyledSectionName>
+      <SectionTitle fontSize={theme.fontSize.xxl} withDot>
+        Kontakt
+      </SectionTitle>
       <StyledLinksWrapper>
         {links.map((item, index) => (
           <StyledLinkWrapper key={index}>

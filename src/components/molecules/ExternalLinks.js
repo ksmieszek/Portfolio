@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Icons from "utils/Icons";
 
 const StyledLink = styled.a`
@@ -9,7 +9,7 @@ const StyledLink = styled.a`
   cursor: pointer;
 
   &:hover {
-    background: #403f4b;
+    background-color: #403f4b;
   }
 
   &:not(:first-child) {

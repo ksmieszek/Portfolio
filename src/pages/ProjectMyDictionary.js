@@ -1,11 +1,11 @@
 import React from "react";
 import { projectMyDictionaryDescription } from "utils/ProjectsDescriptions";
 import routes from "routes";
-import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
-import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
-import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
-import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
-import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
+import ProjectContentTepmlate from "components/templates/ProjectContentTepmlate";
+import ProjectHeaderTemplate from "components/templates/ProjectHeaderTemplate";
+import ProjectInteractionsTemplate from "components/templates/ProjectInteractionsTemplate";
+import ProjectFeaturesTemplate from "components/templates/ProjectFeaturesTemplate";
+import ProjectNextLinkTemplate from "components/templates/ProjectNextLinkTemplate";
 
 const ProjectMyDictionary = () => {
   return (

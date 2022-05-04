@@ -1,10 +1,10 @@
 import React from "react";
 import { projectCodeFastDescription } from "utils/ProjectsDescriptions";
-import ProjectContentTepmlate from "templates/ProjectContentTepmlate";
-import ProjectHeaderTemplate from "templates/ProjectHeaderTemplate";
-import ProjectFeaturesTemplate from "templates/ProjectFeaturesTemplate";
-import ProjectInteractionsTemplate from "templates/ProjectInteractionsTemplate";
-import ProjectNextLinkTemplate from "templates/ProjectNextLinkTemplate";
+import ProjectContentTepmlate from "components/templates/ProjectContentTepmlate";
+import ProjectHeaderTemplate from "components/templates/ProjectHeaderTemplate";
+import ProjectFeaturesTemplate from "components/templates/ProjectFeaturesTemplate";
+import ProjectInteractionsTemplate from "components/templates/ProjectInteractionsTemplate";
+import ProjectNextLinkTemplate from "components/templates/ProjectNextLinkTemplate";
 import routes from "routes";
 
 const ProjectCodeFast = () => {

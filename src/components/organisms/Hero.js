@@ -47,11 +47,15 @@ const StyledLineOverlay = styled.div`
 `;
 
 const StyledName = styled.img`
-  height: 40px;
+  height: 45px;
   margin: 5px 0;
   user-select: none;
   opacity: 0;
   visibility: hidden;
+
+  @media (min-width: 450px) {
+    height: 50px;
+  }
 
   @media (min-width: 768px) {
     height: 55px;
@@ -62,20 +66,20 @@ const StyledName = styled.img`
     margin: 10px 0;
   }
 `;
+
 const StyledTitle = styled.h3`
   margin: 5px 0;
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: ${(props) => props.theme.fontSize.s};
+  font-weight: ${(props) => props.theme.fontWeight.normal};
   opacity: 0;
   visibility: hidden;
 
   @media (min-width: 768px) {
-    font-size: 2.2rem;
+    font-size: ${(props) => props.theme.fontSize.l};
   }
 
   @media (min-width: 1440px) {
     margin: 10px 0;
-    font-size: 2.5rem;
   }
 `;
 
@@ -84,8 +88,8 @@ const StyledCVLink = styled.a`
   padding: 15px 50px;
   border: 2px solid #f7e018;
   border-radius: 50px;
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: ${(props) => props.theme.fontSize.xs};
+  font-weight: ${(props) => props.theme.fontWeight.medium};
   letter-spacing: 2px;
   transition: all 0.2s ease;
   opacity: 0;
@@ -98,7 +102,7 @@ const StyledCVLink = styled.a`
 
   @media (min-width: 768px) {
     padding: 20px 70px;
-    font-size: 2rem;
+    font-size: ${(props) => props.theme.fontSize.m};
   }
 `;
 
@@ -121,21 +125,21 @@ const StyledScrollDownLink = styled(Link)`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid rgb(247, 224, 24);
+  border: 2px solid #f7e018;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(247, 224, 24);
+  background-color: #f7e018;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
 
   &:hover {
-    background: #34333b;
+    background-color: #34333b;
   }
 
   &:hover ${StyledArrowSign} {
-    border-color: rgb(247, 224, 24);
+    border-color: #f7e018;
   }
 `;
 
@@ -170,11 +174,11 @@ const Hero = React.forwardRef((props, ref) => {
             </StyledTextWrapper>
           </StyledLineWrapper>
         </div>
-        <StyledCVLink ref={cvLink} href="https://drive.google.com/uc?id=1I1iOowWVfAzQwdo7s-yMZVo7TDInH_Pz&export=download">
+        <StyledCVLink ref={cvLink} href="https://drive.google.com/uc?id=1QCwMLxghbjOCKBbPA8sXj17RMOmklxDv&export=download">
           CV
         </StyledCVLink>
       </StyledHeroContent>
-      <StyledScrollDownLink to="#projects" ref={scrollDownLink}>
+      <StyledScrollDownLink to="#about" ref={scrollDownLink}>
         <StyledArrowSign />
       </StyledScrollDownLink>
     </StyledWrapper>

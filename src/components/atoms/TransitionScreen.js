@@ -20,7 +20,6 @@ const StyledCover = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  /* background-color: rgb(247, 224, 24); */
   background-color: #2979ff;
 `;
 

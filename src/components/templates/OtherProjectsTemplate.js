@@ -4,6 +4,8 @@ import styled from "styled-components";
 import ExternalLinks from "components/molecules/ExternalLinks";
 import LinkButton from "components/atoms/LinkButton";
 import folderIcon from "assets/icons/folder.svg";
+import SectionTitle from "components/atoms/SectionTitle";
+import { theme } from "theme";
 
 const StyledWrapper = styled.div`
   margin-top: 50px;
@@ -14,11 +16,6 @@ const StyledWrapper = styled.div`
   @media (min-width: 1440px) {
     margin-top: 150px;
   }
-`;
-
-const StyledSectionName = styled.h2`
-  font-size: 2.4rem;
-  font-weight: 500;
 `;
 
 const StyledOtherProjects = styled.div`
@@ -63,8 +60,8 @@ const StyledFolderIcon = styled.img`
 
 const StyledProjectTitle = styled.h2`
   margin-top: 20px;
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: ${(props) => props.theme.fontSize.s};
+  font-weight: ${(props) => props.theme.fontWeight.medium};
 `;
 
 const StyledTechnologies = styled.div`
@@ -73,7 +70,7 @@ const StyledTechnologies = styled.div`
 
 const StyledTechnology = styled.p`
   margin-top: 5px;
-  font-size: 1.4rem;
+  font-size: ${(props) => props.theme.fontSize.xxs};
 `;
 
 const StyledLinkButtonWrapper = styled.div`
@@ -81,33 +78,31 @@ const StyledLinkButtonWrapper = styled.div`
   justify-content: flex-end;
 `;
 
-const ProjectsSection = (props) => {
-  return (
-    <StyledWrapper>
-      <StyledSectionName>Pozostałe projekty</StyledSectionName>
-      <StyledOtherProjects>
-        {otherProjectsDescriptions.map((item, index) => (
-          <StyledOtherProject key={index} id={item.id}>
-            <div>
-              <StyledHeader>
-                <StyledFolderIcon src={folderIcon} alt="" />
-                <ExternalLinks github={item.githubLink} />
-              </StyledHeader>
-              <StyledProjectTitle>{item.title}</StyledProjectTitle>
-              <StyledTechnologies>
-                {item.technologies.map((item, index) => (
-                  <StyledTechnology key={index}>{item}</StyledTechnology>
-                ))}
-              </StyledTechnologies>
-            </div>
-            <StyledLinkButtonWrapper>
-              <LinkButton link={item.path}>SZCZEGÓŁY</LinkButton>
-            </StyledLinkButtonWrapper>
-          </StyledOtherProject>
-        ))}
-      </StyledOtherProjects>
-    </StyledWrapper>
-  );
-};
+const OtherProjectsTemplate = () => (
+  <StyledWrapper>
+    <SectionTitle fontSize={theme.fontSize.l}>Pozostałe projekty</SectionTitle>
+    <StyledOtherProjects>
+      {otherProjectsDescriptions.map((item, index) => (
+        <StyledOtherProject key={index} id={item.id}>
+          <div>
+            <StyledHeader>
+              <StyledFolderIcon src={folderIcon} alt="" />
+              <ExternalLinks github={item.githubLink} />
+            </StyledHeader>
+            <StyledProjectTitle>{item.title}</StyledProjectTitle>
+            <StyledTechnologies>
+              {item.technologies.map((item, index) => (
+                <StyledTechnology key={index}>{item}</StyledTechnology>
+              ))}
+            </StyledTechnologies>
+          </div>
+          <StyledLinkButtonWrapper>
+            <LinkButton link={item.path}>SZCZEGÓŁY</LinkButton>
+          </StyledLinkButtonWrapper>
+        </StyledOtherProject>
+      ))}
+    </StyledOtherProjects>
+  </StyledWrapper>
+);
 
-export default ProjectsSection;
+export default OtherProjectsTemplate;

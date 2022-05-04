@@ -1,8 +1,10 @@
-import React, { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import routes from "routes";
-import GlobalStyle from "GlobalStyle";
+import GlobalStyle from "theme/GlobalStyle";
+import { ThemeProvider } from "styled-components";
+import { theme } from "theme";
+import ActiveLinkProvider from "providers/ActiveLinkProvider";
 import Navigation from "components/organisms/Navigation";
 import Home from "pages/Home";
 import ProjectPixelPerfect from "pages/ProjectPixelPerfect";
@@ -26,34 +28,34 @@ const components = [
   { path: routes.ecommerce, Component: ProjectEcommerce, transitionClasses: "project" },
 ];
 
-function App() {
-  const [activeNavLink, setActiveNavLink] = useState();
-
-  return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <Navigation activeNavLink={activeNavLink} />
-      {components.map(({ path, Component, transitionClasses }) => (
-        <Route key={path} exact path={path}>
-          {({ match }) => (
-            <CSSTransition
-              in={match != null}
-              timeout={{
-                enter: 1800,
-                exit: 1500,
-              }}
-              classNames={transitionClasses}
-              unmountOnExit
-            >
-              <div className={transitionClasses}>
-                <Component setActiveNavLink={setActiveNavLink} />
-              </div>
-            </CSSTransition>
-          )}
-        </Route>
-      ))}
-    </BrowserRouter>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <ActiveLinkProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Navigation />
+        {components.map(({ path, Component, transitionClasses }) => (
+          <Route key={path} exact path={path}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={{
+                  enter: 1800,
+                  exit: 1500,
+                }}
+                classNames={transitionClasses}
+                unmountOnExit
+              >
+                <div className={transitionClasses}>
+                  <Component />
+                </div>
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
+      </ThemeProvider>
+    </ActiveLinkProvider>
+  </BrowserRouter>
+);
 
 export default App;

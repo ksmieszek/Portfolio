@@ -1,9 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useActiveLink } from "providers/ActiveLinkProvider";
 import styled from "styled-components";
 import TransitionScreen from "components/atoms/TransitionScreen";
 import Hero from "components/organisms/Hero";
-import ProjectsSectionTemplate from "templates/ProjectsSectionTemplate";
+import AboutMe from "components/organisms/AboutMe";
+import Projects from "components/organisms/Projects";
 import Contact from "components/organisms/Contact";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -18,14 +20,16 @@ const StyledWrapper = styled.div`
   align-items: center;
 `;
 
-const Home = ({ setActiveNavLink }) => {
+const Home = () => {
   let history = useHistory();
+  const { setActiveNavLink } = useActiveLink();
   //determine wchich scroll animation to fire depending on previous presence of user
   const [scrollFromThisPage, setScrollFromThisPage] = useState(false);
   const heroSectionRef = useRef(null);
+  const aboutMeSectionRef = useRef(null);
   const projectsSectionRef = useRef(null);
   const contactSectionRef = useRef(null);
-  const sectionRefs = [heroSectionRef, projectsSectionRef, contactSectionRef];
+  const sectionRefs = [heroSectionRef, aboutMeSectionRef, projectsSectionRef, contactSectionRef];
 
   useEffect(() => {
     //if there is need to scroll to section
@@ -50,13 +54,12 @@ const Home = ({ setActiveNavLink }) => {
   //sets active link when section appear in viewport
   useEffect(() => {
     sectionRefs.forEach((item) => {
-      const pointInViewport = `150px`;
+      const pointInViewport = `40%`;
       gsap.to(item.current, {
         scrollTrigger: {
           trigger: item.current,
           start: "top " + pointInViewport,
           end: `bottom ` + pointInViewport,
-          // markers: true,
           onToggle: (self) => {
             self.isActive && item.current?.id && setActiveNavLink(item.current.id);
           },
@@ -70,7 +73,8 @@ const Home = ({ setActiveNavLink }) => {
       <TransitionScreen fromLeft />
       <StyledWrapper>
         <Hero ref={heroSectionRef} />
-        <ProjectsSectionTemplate ref={projectsSectionRef} setActiveNavLink={setActiveNavLink} />
+        <AboutMe ref={aboutMeSectionRef} />
+        <Projects ref={projectsSectionRef} />
         <Contact ref={contactSectionRef} />
       </StyledWrapper>
     </div>

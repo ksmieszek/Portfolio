@@ -19,11 +19,11 @@ const StyledLinkWrapper = styled(Link)`
   position: relative;
   padding: 20px 20px;
   max-width: fit-content;
-  font-size: 2rem;
+  font-size: ${(props) => props.theme.fontSize.m};
   z-index: 1;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: ${(props) => props.theme.fontWeight.medium};
 
   &::before {
     content: "";

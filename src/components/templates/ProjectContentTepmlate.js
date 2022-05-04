@@ -35,13 +35,13 @@ const StyledProjectContentWrapper = styled.div`
 
 const ProjectContentTemplate = (props) => {
   let history = useHistory();
-  const wrapper = useRef(null);
+  const wrapperRef = useRef(null);
 
   useEffect(() => {
     let delay = 2.5;
     if (history.action === "POP") delay = 0.5;
 
-    gsap.from(wrapper.current.children, {
+    gsap.from(wrapperRef.current.children, {
       y: 30,
       autoAlpha: 0,
       duration: 0.4,
@@ -56,7 +56,7 @@ const ProjectContentTemplate = (props) => {
       <LinkButton link={`/#${props.projectId}`} back small>
         BACK
       </LinkButton>
-      <StyledProjectContentWrapper ref={wrapper}>{props.children}</StyledProjectContentWrapper>
+      <StyledProjectContentWrapper ref={wrapperRef}>{props.children}</StyledProjectContentWrapper>
     </StyledWrapper>
   );
 };

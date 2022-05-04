@@ -10,11 +10,11 @@ const StyledWrapper = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(247, 224, 24);
+  background-color: #f7e018;
   clip-path: polygon(100% 0, 100% 60%, 85% 100%, 0 100%, 0 0);
   font-size: 1.1rem;
-  font-weight: 500;
-  color: rgb(247, 224, 24);
+  font-weight: ${(props) => props.theme.fontWeight.medium};
+  color: #f7e018;
   cursor: pointer;
   z-index: 1;
 

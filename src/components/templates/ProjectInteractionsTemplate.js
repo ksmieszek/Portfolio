@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SectionTitle from "components/atoms/SectionTitle";
+import { theme } from "theme";
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -22,6 +23,7 @@ const StyledDetailsWrapper = styled.div`
     flex-wrap: wrap;
   }
 `;
+
 const StyledDetailWrapper = styled.div`
   max-width: 80%;
   padding-top: 30px;
@@ -80,7 +82,7 @@ const StyledVideo = styled.video`
 const ProjectInteractionsTemplate = ({ videos }) => {
   return (
     <StyledWrapper>
-      <SectionTitle>Komponenty interfejsu oraz interakcje z nimi</SectionTitle>
+      <SectionTitle fontSize={theme.fontSize.m}>Komponenty interfejsu oraz interakcje z nimi</SectionTitle>
       <StyledDetailsWrapper>
         {videos.map((item, index) => (
           <StyledDetailWrapper key={index}>

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useActiveLink } from "providers/ActiveLinkProvider";
 import styled, { css } from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,7 +21,6 @@ const StyledNavWrapper = styled.nav`
 
   @media (min-width: 1440px) {
     pointer-events: all;
-    /* background-color: #34333b; */
   }
 `;
 
@@ -47,7 +47,7 @@ const StyledLinksWrapper = styled.div`
   justify-content: center;
   background-color: #1b1f2d;
   pointer-events: all;
-  font-size: 2rem;
+  font-size: ${(props) => props.theme.fontSize.m};
 
   @media (min-width: 1440px) {
     position: static;
@@ -55,10 +55,9 @@ const StyledLinksWrapper = styled.div`
     max-width: 1440px;
     transform: translateY(0);
     margin: auto;
-    /* padding: 0 200px; */
     flex-direction: row;
     justify-content: flex-end;
-    font-size: 1.6rem;
+    font-size: ${(props) => props.theme.fontSize.xs};
     background-color: transparent;
   }
 `;
@@ -69,7 +68,7 @@ const StyledNavLink = styled(NavLink)`
   padding: 30px;
   display: block;
   text-align: center;
-  font-weight: 500;
+  font-weight: ${(props) => props.theme.fontWeight.medium};
   opacity: 0;
   color: #b0b2c3;
 
@@ -123,18 +122,19 @@ const StyledLine = styled.span`
     `}
 `;
 
-const Navigation = ({ activeNavLink }) => {
+const Navigation = () => {
   const navLinks = [
     { name: "home", title: "Home" },
+    { name: "about", title: "O mnie" },
     { name: "projects", title: "Projekty" },
     { name: "contact", title: "Kontakt" },
   ];
-
   const [menuVisible, setMenuVisible] = useState(false);
   const navRef = useRef(null);
   const navLinksRef = useRef(null);
   const hamburgerRef = useRef(null);
   const boxShadowRef = useRef(null);
+  const { activeNavLink } = useActiveLink();
 
   //animate nav on scroll
   useEffect(() => {
@@ -148,7 +148,6 @@ const Navigation = ({ activeNavLink }) => {
       trigger: navRef.current,
       start: "bottom top",
       end: 9999 + "top",
-      // markers: true,
       onToggle: (self) => {
         if (self.isActive) {
           if (window.innerWidth >= 1440) {

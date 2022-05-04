@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SectionTitle from "components/atoms/SectionTitle";
+import { theme } from "theme";
 
 const StyledWrapper = styled.div`
   max-width: 800px;
@@ -23,10 +24,10 @@ const StyledFeaturesList = styled.ul`
 const StyledFeature = styled.li`
   width: 100%;
   margin: 25px 0;
-  font-size: 1.4rem;
+  font-size: ${(props) => props.theme.fontSize.xxs};
 
   @media (min-width: 768px) {
-    font-size: 1.6rem;
+    font-size: ${(props) => props.theme.fontSize.xs};
   }
 `;
 
@@ -34,7 +35,7 @@ const ProjectFeaturesTemplate = ({ features, title = "Cechy projektu", distanceO
   return features ? (
     <StyledWrapper>
       <StyledFeaturesWrapper distanceOut={distanceOut}>
-        <SectionTitle>{title}</SectionTitle>
+        <SectionTitle fontSize={theme.fontSize.m}>{title}</SectionTitle>
         <StyledFeaturesList>
           {features.map((item, index) => (
             <StyledFeature key={index}>{item}</StyledFeature>

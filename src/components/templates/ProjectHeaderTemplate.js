@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ExternalLinks from "components/molecules/ExternalLinks";
+import SectionTitle from "components/atoms/SectionTitle";
+import { theme } from "theme";
 
 const StyledWrapper = styled.div`
   max-width: 800px;
@@ -13,19 +15,14 @@ const StyledHeaderWrapper = styled.div`
   align-items: center;
 `;
 
-const StyledHeaderTitle = styled.div`
-  font-size: 2.9rem;
-  font-weight: 500;
-`;
-
 const StyledDescription = styled.div`
   margin-top: 20px;
   padding-right: 10px;
-  font-size: 1.4rem;
+  font-size: ${(props) => props.theme.fontSize.xxs};
   white-space: pre-wrap;
 
   @media (min-width: 768px) {
-    font-size: 1.6rem;
+    font-size: ${(props) => props.theme.fontSize.xs};
     line-height: 1.4;
   }
 `;
@@ -34,7 +31,7 @@ const ProjectHeaderTemplate = ({ project, children }) => {
   return (
     <StyledWrapper>
       <StyledHeaderWrapper>
-        <StyledHeaderTitle>{project.title}</StyledHeaderTitle>
+        <SectionTitle fontSize={theme.fontSize.xl}>{project.title}</SectionTitle>
         <div>
           <ExternalLinks github={project.githubLink} site={project.siteLink} additionalGithub={project.additionalGithubLink} />
         </div>

@@ -1,44 +1,29 @@
-import React, { useEffect } from "react";
-import { mainProjectsDescriptions, otherProjectsDescriptions } from "utils/ProjectsDescriptions";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
-import OtherProjectsTemplate from "templates/OtherProjectsTemplate";
+import { mainProjectsDescriptions } from "utils/ProjectsDescriptions";
 import ExternalLinks from "components/molecules/ExternalLinks";
 import LinkButton from "components/atoms/LinkButton";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 const StyledWrapper = styled.div`
-  width: 100%;
-  padding: 50px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #34333b;
-`;
-
-const StyledSectionName = styled.h2`
-  margin: 50px 0;
-  font-size: 4rem;
-  font-weight: 500;
+  width: 90%;
+  max-width: 800px;
 
   @media (min-width: 1440px) {
-    font-size: 5rem;
+    width: 1275px;
+    max-width: 1275px;
   }
 `;
 
 const StyledProjectWrapper = styled.div`
   position: relative;
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
   padding: 50px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 1440px) {
-    width: 1275px;
-    max-width: 1275px;
     padding: 120px 0 80px 0;
     flex-direction: row;
     align-items: flex-start;
@@ -62,7 +47,7 @@ const StyledImage = styled.img`
 
 const StyledContent = styled.div`
   max-width: 800px;
-  font-size: 1.6rem;
+  font-size: ${(props) => props.theme.fontSize.xs};
 
   @media (min-width: 1440px) {
     width: 475px;
@@ -75,12 +60,12 @@ const StyledContent = styled.div`
 
 const StyledTitle = styled.h2`
   margin-bottom: 20px;
-  font-size: 2.4rem;
-  font-weight: 500;
+  font-size: ${(props) => props.theme.fontSize.l};
+  font-weight: ${(props) => props.theme.fontWeight.medium};
 
   @media (min-width: 1440px) {
     margin-bottom: 50px;
-    font-size: 2.9rem;
+    font-size: ${(props) => props.theme.fontSize.xl};
   }
 `;
 
@@ -178,28 +163,25 @@ const StyledExternalLinksWrapper = styled.div`
   }
 `;
 
-const ProjectsSection = React.forwardRef((props, ref) => {
-  const handleRouteChange = function () {
-    props.setActiveNavLink(null);
-  };
+const MainProjectsTemplate = () => {
+  const wrapperRef = useRef(null);
 
   useEffect(() => {
-    [...ref.current.children].forEach((item) => {
+    [...wrapperRef.current.children].forEach((item, index) => {
       gsap.from(item, {
+        x: index % 2 === 0 ? "-10px" : "10px",
         autoAlpha: 0,
-        duration: 1.5,
+        duration: 0.6,
         scrollTrigger: {
           trigger: item,
           start: "top 70%",
-          // markers: true,
         },
       });
     });
   }, []);
 
   return (
-    <StyledWrapper id="projects" ref={ref}>
-      <StyledSectionName>Projekty</StyledSectionName>
+    <StyledWrapper ref={wrapperRef}>
       {mainProjectsDescriptions.map((item) => {
         return (
           <StyledProjectWrapper id={item.id} key={item.id}>
@@ -225,16 +207,12 @@ const ProjectsSection = React.forwardRef((props, ref) => {
               <StyledExternalLinksWrapper>
                 <ExternalLinks github={item.githubLink} site={item.siteLink} additionalGithub={item.additionalGithubLink} />
               </StyledExternalLinksWrapper>
-              <LinkButton link={item.path} onClick={handleRouteChange}>
-                SZCZEGÓŁY
-              </LinkButton>
+              <LinkButton link={item.path}>SZCZEGÓŁY</LinkButton>
             </StyledLinksWrapper>
           </StyledProjectWrapper>
         );
       })}
-      <OtherProjectsTemplate projects={otherProjectsDescriptions} />
     </StyledWrapper>
   );
-});
-
-export default ProjectsSection;
+};
+export default MainProjectsTemplate;
